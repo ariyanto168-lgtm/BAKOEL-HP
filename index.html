@@ -150,12 +150,36 @@
       align-items: center;
       gap: 4px;
       cursor: pointer;
+      touch-action: manipulation;
       transition: background 0.15s;
     }
 
     .header-pill-btn:hover {
       background: rgba(255, 255, 255, 0.32);
       color: #ffffff;
+    }
+
+    /* PWA Install Banner Model */
+    .pwa-install-banner {
+      background: linear-gradient(135deg, var(--app-card) 0%, var(--app-primary-soft) 100%);
+      border: 1.5px solid var(--app-primary);
+      border-radius: 16px;
+      padding: 10px 12px;
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.14);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pwa-banner-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 2px;
+      border: 1px solid var(--app-border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
     }
 
     /* Cards & Surfaces */
@@ -173,6 +197,7 @@
       color: #ffffff;
       font-weight: 600;
       border-radius: 11px;
+      touch-action: manipulation;
     }
 
     .btn-theme:hover, .btn-theme:focus {
@@ -187,6 +212,7 @@
       border: none;
       font-weight: 600;
       border-radius: 11px;
+      touch-action: manipulation;
     }
 
     .btn-theme-soft:hover {
@@ -317,6 +343,7 @@
       background: var(--app-card);
       color: var(--app-text);
       cursor: pointer;
+      touch-action: manipulation;
       transition: all 0.15s ease;
     }
 
@@ -382,6 +409,7 @@
       font-size: 0.72rem;
       font-weight: 600;
       position: relative;
+      touch-action: manipulation;
       transition: all 0.15s ease;
     }
 
@@ -414,6 +442,7 @@
       background: var(--app-card);
       font-size: 0.78rem;
       font-weight: 700;
+      touch-action: manipulation;
       transition: all 0.15s;
     }
     .theme-swatch.active {
@@ -427,22 +456,29 @@
       margin: 0 auto 5px;
     }
 
-    /* Footer Secret Trigger */
+    /* Footer Secret Trigger (Zero-Lag Touch Action) */
     .app-footer {
       text-align: center;
-      padding: 18px 12px 10px;
-      font-size: 0.76rem;
+      padding: 18px 12px 14px;
+      font-size: 0.78rem;
       color: var(--app-muted);
       user-select: none;
+      -webkit-user-select: none;
     }
     .secret-trigger {
+      display: inline-block;
       cursor: pointer;
       font-weight: 700;
-      padding: 3px 6px;
-      border-radius: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      transition: background-color 0.12s ease, transform 0.1s ease;
     }
     .secret-trigger:active {
       background-color: var(--app-primary-soft);
+      transform: scale(0.95);
     }
 
     /* Dark mode form overrides */
@@ -529,21 +565,24 @@
   <!-- MAIN CONTENT -->
   <main class="app-shell px-3 pt-3">
 
-    <!-- PWA INSTALL BANNER -->
-    <div id="pwaInstallBanner" class="app-card p-3 mb-3 border-0 d-none" style="background: linear-gradient(135deg, var(--app-primary-soft), var(--app-card)); border-left: 4px solid var(--app-primary) !important;">
+    <!-- PWA INSTALL BANNER (OTOMATIS SEMBUNYI JIKA APLIKASI SUDAH TERINSTAL) -->
+    <div id="pwaInstallBanner" class="pwa-install-banner mb-3 d-none">
       <div class="d-flex align-items-center justify-content-between gap-2">
-        <div class="d-flex align-items-center gap-2">
-          <img src="./logobakoelhp.png" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Instal Bakoel HP" style="width:44px; height:44px; border-radius:12px; object-fit:contain; background:#fff; padding:2px;" />
-          <div>
-            <div class="fw-bold" style="font-size:0.88rem;">Instal Aplikasi Bakoel HP</div>
-            <div class="text-muted" style="font-size:0.74rem;">Pasang pintasan di layar utama HP untuk cek stok &amp; nego lebih cepat.</div>
+        <div class="d-flex align-items-center gap-2 overflow-hidden">
+          <img id="pwaBannerLogo" src="./logobakoelhp.png" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Instal Bakoel HP" class="pwa-banner-icon" />
+          <div class="overflow-hidden">
+            <div class="d-flex align-items-center gap-1">
+              <span class="fw-bold text-truncate" style="font-size:0.86rem;">Instal Aplikasi Bakoel HP</span>
+              <span class="badge bg-success" style="font-size:0.6rem;">GRATIS</span>
+            </div>
+            <div class="text-muted text-truncate" style="font-size:0.72rem;">Pasang di layar utama HP • Akses cepat &amp; ringan</div>
           </div>
         </div>
-        <div class="d-flex gap-1 flex-shrink-0">
-          <button type="button" class="btn btn-sm btn-theme px-3" id="btnInstallPwa">
+        <div class="d-flex align-items-center gap-1 flex-shrink-0">
+          <button type="button" class="btn btn-sm btn-theme px-3 py-1" id="btnInstallPwa">
             <i class="bi bi-download me-1"></i>Instal
           </button>
-          <button type="button" class="btn btn-sm btn-outline-secondary border-0" onclick="dismissPwaBanner()" aria-label="Tutup">
+          <button type="button" class="btn btn-sm btn-outline-secondary border-0 px-1" onclick="dismissPwaBanner()" aria-label="Tutup Banner">
             <i class="bi bi-x-lg"></i>
           </button>
         </div>
@@ -653,7 +692,7 @@
     </div>
 
     <!-- ===================================================================== -->
-    <!-- MODE ADMIN / PENJUAL SECTIONS (Login via Double-Click Versi)          -->
+    <!-- MODE ADMIN / PENJUAL SECTIONS (Login via Ketuk 2x Nomor Versi)        -->
     <!-- ===================================================================== -->
     <div id="adminWorkspace" class="d-none">
 
@@ -1055,7 +1094,7 @@
 
     <!-- FOOTER DENGAN AKSES LOGIN ADMIN VIA VERSI & POWERED BY ARI GPM -->
     <footer class="app-footer">
-      <div>Bakoel HP Marketplace • <span id="footerVersionTrigger" class="secret-trigger text-theme" title="Klik 2x untuk akses penjual">v1.2.0</span></div>
+      <div>Bakoel HP Marketplace • <span id="footerVersionTrigger" class="secret-trigger text-theme" title="Ketuk 2x untuk akses penjual">v1.2.1</span></div>
       <div class="mt-1">
         <span id="footerBrandTrigger" class="secret-trigger">Powered by Ari GPM</span>
       </div>
@@ -1372,7 +1411,46 @@
     </div>
   </div>
 
-  <!-- 7. MODAL VERIFIKASI KEASLIAN TOKO & ANTI-PHISHING -->
+  <!-- 7. MODAL PANDUAN INSTAL MANUAL (SAAT BROWSER BELUM MEMICU PROMPT OTOMATIS / IOS) -->
+  <div class="modal fade" id="modalManualInstallGuide" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold fs-6"><i class="bi bi-phone-fill text-theme me-1"></i>Cara Instal Aplikasi Bakoel HP</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body small">
+          <div class="d-flex align-items-center gap-2 p-2 rounded-3 bg-theme-soft mb-3">
+            <img src="./logobakoelhp.png" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Logo" style="width:42px; height:42px; border-radius:10px; background:#fff; padding:2px;" />
+            <div>
+              <div class="fw-bold text-theme">Pasang di Layar Utama HP</div>
+              <div class="text-muted" style="font-size:0.74rem;">Ikon aplikasi akan muncul di menu HP Anda seperti aplikasi Play Store.</div>
+            </div>
+          </div>
+          <div class="mb-2">
+            <strong><i class="bi bi-android2 text-success me-1"></i>Android (Chrome / Edge):</strong>
+            <ol class="mb-0 ps-3 mt-1 text-muted">
+              <li>Ketuk ikon menu <strong>Titik Tiga (⋮)</strong> di pojok kanan atas browser.</li>
+              <li>Pilih <strong>"Instal aplikasi"</strong> atau <strong>"Tambahkan ke Layar utama"</strong>.</li>
+              <li>Ketuk <strong>Instal</strong>.</li>
+            </ol>
+          </div>
+          <div class="mt-2">
+            <strong><i class="bi bi-apple me-1"></i>iPhone / iPad (Safari):</strong>
+            <ol class="mb-0 ps-3 mt-1 text-muted">
+              <li>Ketuk ikon <strong>Bagikan (Share)</strong> di bagian bawah layar Safari.</li>
+              <li>Gulir ke bawah dan pilih <strong>"Tambahkan ke Layar Utama" (Add to Home Screen)</strong>.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-theme w-100" data-bs-dismiss="modal">Mengerti</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. MODAL VERIFIKASI KEASLIAN TOKO & ANTI-PHISHING -->
   <div class="modal fade" id="modalSecurityVerify" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content rounded-4 border-0">
@@ -1427,7 +1505,7 @@
     </div>
   </div>
 
-  <!-- 8. Modal Login Admin / Penjual (Dengan Identitas Visual Maskot Bakoel HP) -->
+  <!-- 9. Modal Login Admin / Penjual (Smooth & Zero-Delay) -->
   <div class="modal fade" id="modalAdminLogin" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-sm">
       <div class="modal-content rounded-4 border-0">
@@ -1473,7 +1551,7 @@
     </div>
   </div>
 
-  <!-- 9. Modal Tambah / Edit Produk (Admin - Upload Foto Langsung dari Galeri HP) -->
+  <!-- 10. Modal Tambah / Edit Produk (Admin - Upload Foto Langsung dari Galeri HP) -->
   <div class="modal fade" id="modalProductForm" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content rounded-4 border-0">
@@ -1580,7 +1658,7 @@
     </div>
   </div>
 
-  <!-- 10. Modal Respon Nego (Admin) -->
+  <!-- 11. Modal Respon Nego (Admin) -->
   <div class="modal fade" id="modalAdminNegoReply" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content rounded-4 border-0">
@@ -1616,7 +1694,7 @@
     </div>
   </div>
 
-  <!-- 11. CUSTOM CONFIRMATION MODAL (#modalConfirm - PENGGANTI confirm() BROWSER) -->
+  <!-- 12. CUSTOM CONFIRMATION MODAL (#modalConfirm - PENGGANTI confirm() BROWSER) -->
   <div class="modal fade" id="modalConfirm" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-sm">
       <div class="modal-content rounded-4 border-0">
@@ -1654,17 +1732,17 @@
        1. KONFIGURASI DEFAULT, LOGO MASKOT BAKOEL HP & STATE APLIKASI
        ========================================================================= */
     const DEFAULT_API_URL = "https://script.google.com/macros/s/GANTI_DENGAN_ID_DEPLOYMENT_ANDA/exec";
-    const APP_VERSION = "v1.2.0";
+    const APP_VERSION = "v1.2.1";
     const STORAGE_KEY = "bakoel_hp_app_data_v1";
     const API_URL_KEY = "app_api_url";
+    const PWA_INSTALLED_FLAG_KEY = "bakoel_hp_pwa_installed";
     const DEFAULT_MASCOT_LOGO_PATH = "./logobakoelhp.png";
 
-    // Batas maksimal memori aman agar aplikasi tetap ringan, bebas crash, & sinkron ke Google Sheets
     const MAX_STORAGE_LIMIT_KB = 4200;
     const MAX_SINGLE_PHOTO_CHARS = 40000;
     const TARGET_PHOTO_DIMENSION = 720;
 
-    // Fallback SVG Ilustrasi Maskot Bakoel HP (jika logobakoelhp.png belum diunggah ke repo)
+    // Fallback SVG Ilustrasi Maskot Bakoel HP
     const FALLBACK_MASCOT_SVG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='bgG' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230284c7'/%3E%3Cstop offset='100%25' stop-color='%231d4ed8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' rx='38' fill='url(%23bgG)'/%3E%3Cpath d='M25 45 L175 45 L165 68 L35 68 Z' fill='%23ef4444'/%3E%3Cpath d='M55 45 L80 45 L75 68 L50 68 Z M115 45 L140 45 L135 68 L110 68 Z' fill='%23ffffff'/%3E%3Ccircle cx='100' cy='96' r='30' fill='%23fde68a'/%3E%3Cpath d='M70 84 Q100 54 130 84 Z' fill='%23111827'/%3E%3Crect x='82' y='66' width='36' height='12' rx='4' fill='%23facc15'/%3E%3Ccircle cx='90' cy='96' r='3.5' fill='%23111827'/%3E%3Ccircle cx='110' cy='96' r='3.5' fill='%23111827'/%3E%3Cpath d='M92 106 Q100 115 108 106' stroke='%23dc2626' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Crect x='134' y='74' width='32' height='54' rx='6' fill='%23111827' stroke='%23ffffff' stroke-width='2'/%3E%3Crect x='138' y='79' width='24' height='42' rx='3' fill='%236366f1'/%3E%3Crect x='18' y='126' width='164' height='36' rx='12' fill='%23facc15' stroke='%231e3a8a' stroke-width='3'/%3E%3Ctext x='100' y='150' font-family='Arial,sans-serif' font-size='22' font-weight='900' fill='%231e3a8a' text-anchor='middle'%3EBakoel HP%3C/text%3E%3Crect x='26' y='165' width='148' height='20' rx='10' fill='%23dc2626'/%3E%3Ctext x='100' y='178' font-family='Arial,sans-serif' font-size='8.5' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3ESmartphone Pilihan, Harga Bersahabat%3C/text%3E%3C/svg%3E";
 
     function createPhoneIllustration(label, bgHex) {
@@ -1767,7 +1845,7 @@
     let deferredInstallPrompt = null;
     let confirmCallback = null;
     let adminIdleTimer = null;
-    const ADMIN_IDLE_TIMEOUT_MS = 2 * 60 * 1000; // 2 Menit auto-lock keamanan sesi penjual
+    const ADMIN_IDLE_TIMEOUT_MS = 2 * 60 * 1000;
 
     function loadAppData() {
       try {
@@ -1838,7 +1916,7 @@
     }
 
     /* =========================================================================
-       2. SMART ADAPTIVE PHOTO COMPRESSION (GALERI HP -> JERNIH & HEMAT MEMORI)
+       2. SMART ADAPTIVE PHOTO COMPRESSION
        ========================================================================= */
     function compressImageFileToBudget(file, maxDim = TARGET_PHOTO_DIMENSION, maxChars = MAX_SINGLE_PHOTO_CHARS) {
       return new Promise((resolve, reject) => {
@@ -1976,7 +2054,7 @@
     }
 
     /* =========================================================================
-       3. FORMATTER & HELPER UI (BEBAS ALERT/CONFIRM BROWSER)
+       3. FORMATTER & HELPER UI
        ========================================================================= */
     function formatRupiah(num) {
       const val = Number(num) || 0;
@@ -2050,7 +2128,7 @@
     }
 
     /* =========================================================================
-       4. PENGAMANAN TOKO (ANTI-PHISHING, IDENTITAS VISUAL, SHARE LINK PUBLIK)
+       4. PENGAMANAN TOKO & SHARE LINK PUBLIK
        ========================================================================= */
     function openSecurityVerifyModal() {
       const s = APP_DATA.settings;
@@ -2203,12 +2281,10 @@
 
       document.getElementById("receiptPreviewPaper").innerHTML = buildReceiptHtml(t, false);
 
-      // Tombol Print 58mm
       document.getElementById("btnPrintFromPreview").onclick = () => {
         printThermalReceipt(t.id);
       };
 
-      // Tombol Share / Salin Nota
       const plainText = buildReceiptPlainText(t);
       document.getElementById("btnShareGenericReceipt").onclick = () => {
         if (navigator.share) {
@@ -2218,7 +2294,6 @@
         }
       };
 
-      // Link langsung ke wa.me Pembeli (otomatis format nomor 08... -> 628...)
       let cleanBuyerWa = (t.buyerWa || "").replace(/[^0-9]/g, "");
       if (cleanBuyerWa.startsWith("0")) {
         cleanBuyerWa = "62" + cleanBuyerWa.slice(1);
@@ -2280,6 +2355,7 @@
 
     function updateBadgesAndHeader() {
       const s = APP_DATA.settings;
+      const logoSrc = getActiveLogoSrc();
       document.getElementById("headerStoreName").textContent = s.storeName || "BAKOEL HP";
       document.getElementById("headerStoreSubtitle").textContent = s.storeTagline || "Smartphone Pilihan, Harga Bersahabat";
       document.getElementById("headerStoreAddress").innerHTML = `<i class="bi bi-geo-alt-fill"></i> ${escapeHtml(s.storeAddress || "-")}`;
@@ -2289,7 +2365,10 @@
         this.onerror = null;
         this.src = FALLBACK_MASCOT_SVG;
       };
-      logoEl.src = getActiveLogoSrc();
+      logoEl.src = logoSrc;
+
+      const bannerLogoEl = document.getElementById("pwaBannerLogo");
+      if (bannerLogoEl) bannerLogoEl.src = logoSrc;
 
       document.getElementById("footerVersionTrigger").textContent = APP_VERSION;
 
@@ -2298,7 +2377,6 @@
         document.getElementById("lastSyncBadge").textContent = "Sync " + dt.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" });
       }
 
-      // Customer badges
       const activeNegos = APP_DATA.negos.filter(n => n.status === "approved" || n.status === "countered").length;
       const custNegoBadge = document.getElementById("custNegoBadge");
       custNegoBadge.textContent = activeNegos;
@@ -2309,7 +2387,6 @@
       custTrxBadge.textContent = activeOrders;
       custTrxBadge.classList.toggle("d-none", activeOrders === 0);
 
-      // Admin badges
       const pendingNegos = APP_DATA.negos.filter(n => n.status === "pending").length;
       const pendingOrders = APP_DATA.transactions.filter(t => t.status === "Menunggu Bayar" || t.status === "Diproses").length;
       const totalAdminAlert = pendingNegos + pendingOrders;
@@ -2353,36 +2430,49 @@
     }
 
     /* =========================================================================
-       8. AKSES LOGIN ADMIN VIA VERSI & "POWERED BY ARI GPM" + IDLE AUTO-LOCK
+       8. AKSES LOGIN ADMIN VIA VERSI & "POWERED BY ARI GPM" (SMOOTH & ZERO-LAG)
        ========================================================================= */
     function setupSecretAdminTriggers() {
       const triggers = [
         document.getElementById("footerVersionTrigger"),
         document.getElementById("footerBrandTrigger")
       ];
-      let lastTapTime = 0;
+      let tapCount = 0;
+      let tapResetTimer = null;
 
       triggers.forEach(el => {
         if (!el) return;
-        el.addEventListener("dblclick", () => {
-          openAdminLoginOrSwitch();
-        });
-        el.addEventListener("touchend", (e) => {
-          const now = Date.now();
-          if (now - lastTapTime < 420) {
-            e.preventDefault();
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          tapCount++;
+          clearTimeout(tapResetTimer);
+
+          if (tapCount >= 2) {
+            tapCount = 0;
             openAdminLoginOrSwitch();
+          } else {
+            tapResetTimer = setTimeout(() => {
+              tapCount = 0;
+            }, 600);
           }
-          lastTapTime = now;
         });
       });
 
-      // Reset timer auto-lock jika penjual sedang aktif berinteraksi
       ["click", "touchstart", "keydown"].forEach(evt => {
         document.addEventListener(evt, () => {
           if (isAdminLoggedIn) resetAdminIdleTimer();
         }, { passive: true });
       });
+
+      const loginModalEl = document.getElementById("modalAdminLogin");
+      if (loginModalEl) {
+        loginModalEl.addEventListener("shown.bs.modal", () => {
+          const pinInput = document.getElementById("adminPinInput");
+          if (pinInput && !document.getElementById("adminPinLoginBox").classList.contains("d-none")) {
+            pinInput.focus();
+          }
+        });
+      }
     }
 
     function resetAdminIdleTimer() {
@@ -2399,24 +2489,35 @@
         showToast("Anda sudah berada di Mode Penjual.");
         return;
       }
+
+      const modalEl = document.getElementById("modalAdminLogin");
+      if (modalEl.classList.contains("show")) {
+        document.getElementById("adminPinInput").focus();
+        return;
+      }
+
       document.getElementById("loginSecurityMascotImg").src = getActiveLogoSrc();
       document.getElementById("loginSecurityPhrase").textContent = APP_DATA.settings.securityPhrase || "BAKOEL HP ASLI";
       document.getElementById("adminPinInput").value = "";
       document.getElementById("adminLoginError").classList.add("d-none");
       togglePinRecoveryBox(false);
-      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalAdminLogin")).show();
-      setTimeout(() => document.getElementById("adminPinInput").focus(), 350);
+
+      const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
+      modalInstance.show();
     }
 
     function verifyAdminPin() {
       const inputPin = document.getElementById("adminPinInput").value.trim();
       const savedPin = APP_DATA.settings.adminPin || "123456";
       if (inputPin === savedPin) {
-        bootstrap.Modal.getInstance(document.getElementById("modalAdminLogin")).hide();
+        const modalInst = bootstrap.Modal.getInstance(document.getElementById("modalAdminLogin"));
+        if (modalInst) modalInst.hide();
         enterAdminMode();
         showToast("Berhasil masuk ke Menu Penjual!");
       } else {
         document.getElementById("adminLoginError").classList.remove("d-none");
+        document.getElementById("adminPinInput").value = "";
+        document.getElementById("adminPinInput").focus();
       }
     }
 
@@ -2439,7 +2540,8 @@
       if (ans === expected && /^\d{6}$/.test(newPin)) {
         APP_DATA.settings.adminPin = newPin;
         saveAppData();
-        bootstrap.Modal.getInstance(document.getElementById("modalAdminLogin")).hide();
+        const modalInst = bootstrap.Modal.getInstance(document.getElementById("modalAdminLogin"));
+        if (modalInst) modalInst.hide();
         enterAdminMode();
         showToast("PIN berhasil direset & masuk ke Menu Penjual!");
       } else {
@@ -2473,7 +2575,7 @@
     function confirmAdminLogout() {
       showConfirmModal(
         "Keluar Menu Penjual",
-        "Kembali ke tampilan Toko Pembeli? Anda dapat masuk lagi kapan saja dengan klik 2x pada nomor versi.",
+        "Kembali ke tampilan Toko Pembeli? Anda dapat masuk lagi kapan saja dengan ketuk 2x pada nomor versi.",
         "Ya, Keluar",
         "btn-danger",
         () => forceAdminLogout("Kembali ke tampilan Toko Pembeli.")
@@ -2947,7 +3049,6 @@
       }
 
       document.getElementById("payModalBody").innerHTML = `
-        <!-- Segel Identitas Pengamanan Anti-Phishing -->
         <div class="security-seal-box d-flex align-items-center gap-2 mb-2">
           <img src="${getActiveLogoSrc()}" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Segel Keamanan" class="security-seal-avatar" />
           <div style="font-size:0.7rem; line-height:1.25;">
@@ -3050,7 +3151,7 @@
     }
 
     /* =========================================================================
-       10. FITUR ADMIN / PENJUAL: LAPORAN PENJUALAN, PRODUK (GALERI HP), NEGO, ORDER
+       10. FITUR ADMIN / PENJUAL: LAPORAN, PRODUK, NEGO, ORDER, PENGATURAN
        ========================================================================= */
     function renderAdminReports() {
       const periodEl = document.querySelector('input[name="reportPeriod"]:checked');
@@ -3171,7 +3272,6 @@
       showToast("Laporan CSV berhasil diunduh.");
     }
 
-    /* --- ADMIN PRODUK & STOK --- */
     function updateAdminMemoryMeter() {
       const stats = getStorageUsageStats();
       const memText = document.getElementById("adminMemText");
@@ -3342,7 +3442,6 @@
       );
     }
 
-    /* --- ADMIN NEGO & PESANAN (DENGAN PREVIEW, PRINT & SHARE WA.ME NOTA) --- */
     function switchAdminOrderSubTab(sub) {
       const isNego = sub === "nego";
       document.getElementById("subTabNegoBtn").classList.toggle("active", isNego);
@@ -3490,7 +3589,6 @@
       showToast(`Status ${t.invoiceNo} diubah ke "${newStatus}"`);
     }
 
-    /* --- PENGATURAN TOKO, GAS URL (LOCK/UNLOCK), BACKUP & RESTORE --- */
     function populateSettingsForm() {
       const s = APP_DATA.settings;
       document.getElementById("setStoreName").value = s.storeName || "";
@@ -3601,7 +3699,6 @@
       showToast("Pengaturan Pembayaran & Jasa Kirim disimpan.");
     }
 
-    /* --- GAS URL LOCK / UNLOCK --- */
     function toggleGasUrlLock() {
       isGasUrlUnlocked = !isGasUrlUnlocked;
       syncGasLockUi();
@@ -3672,7 +3769,6 @@
       showToast("Frasa Pengamanan & PIN Penjual diperbarui.");
     }
 
-    /* --- BACKUP & RESTORE JSON --- */
     function exportJsonBackup() {
       const blob = new Blob([JSON.stringify(APP_DATA, null, 2)], { type: "application/json" });
       const url = URL.createObjectURL(blob);
@@ -3806,26 +3902,62 @@
     }
 
     /* =========================================================================
-       12. PWA INSTALL BANNER (beforeinstallprompt) & SERVICE WORKER
+       12. PWA INSTALL BANNER & AUTO-HIDE SAAT SUDAH TERINSTAL
        ========================================================================= */
+    function isPwaAlreadyInstalled() {
+      const isStandaloneMode = window.matchMedia && (
+        window.matchMedia("(display-mode: standalone)").matches ||
+        window.matchMedia("(display-mode: fullscreen)").matches ||
+        window.matchMedia("(display-mode: minimal-ui)").matches
+      );
+      const isIosStandalone = window.navigator.standalone === true;
+      const hasInstalledFlag = localStorage.getItem(PWA_INSTALLED_FLAG_KEY) === "1";
+
+      if (isStandaloneMode || isIosStandalone) {
+        localStorage.setItem(PWA_INSTALLED_FLAG_KEY, "1");
+        return true;
+      }
+      return hasInstalledFlag;
+    }
+
+    function updatePwaInstallBannerVisibility() {
+      const banner = document.getElementById("pwaInstallBanner");
+      if (!banner) return;
+
+      if (isPwaAlreadyInstalled()) {
+        banner.classList.add("d-none");
+        return;
+      }
+
+      if (sessionStorage.getItem("pwa_banner_dismissed") === "1") {
+        banner.classList.add("d-none");
+        return;
+      }
+
+      banner.classList.remove("d-none");
+    }
+
     window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();
       deferredInstallPrompt = e;
-      const banner = document.getElementById("pwaInstallBanner");
-      if (banner && !sessionStorage.getItem("pwa_banner_dismissed")) {
-        banner.classList.remove("d-none");
-      }
+      // Jika event ini muncul di browser, berarti aplikasi belum terinstal / sudah di-uninstall
+      localStorage.removeItem(PWA_INSTALLED_FLAG_KEY);
+      updatePwaInstallBannerVisibility();
     });
 
     document.getElementById("btnInstallPwa").addEventListener("click", async () => {
-      if (!deferredInstallPrompt) return;
-      deferredInstallPrompt.prompt();
-      const { outcome } = await deferredInstallPrompt.userChoice;
-      if (outcome === "accepted") {
-        showToast("Aplikasi Bakoel HP sedang dipasang ke layar utama!");
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        const { outcome } = await deferredInstallPrompt.userChoice;
+        if (outcome === "accepted") {
+          localStorage.setItem(PWA_INSTALLED_FLAG_KEY, "1");
+          document.getElementById("pwaInstallBanner").classList.add("d-none");
+          showToast("Aplikasi Bakoel HP sedang dipasang ke layar utama!");
+        }
+        deferredInstallPrompt = null;
+      } else {
+        bootstrap.Modal.getOrCreateInstance(document.getElementById("modalManualInstallGuide")).show();
       }
-      deferredInstallPrompt = null;
-      document.getElementById("pwaInstallBanner").classList.add("d-none");
     });
 
     function dismissPwaBanner() {
@@ -3834,10 +3966,20 @@
     }
 
     window.addEventListener("appinstalled", () => {
+      localStorage.setItem(PWA_INSTALLED_FLAG_KEY, "1");
       document.getElementById("pwaInstallBanner").classList.add("d-none");
       deferredInstallPrompt = null;
       showToast("Aplikasi Bakoel HP berhasil terinstal!");
     });
+
+    if (window.matchMedia) {
+      window.matchMedia("(display-mode: standalone)").addEventListener("change", (evt) => {
+        if (evt.matches) {
+          localStorage.setItem(PWA_INSTALLED_FLAG_KEY, "1");
+          document.getElementById("pwaInstallBanner").classList.add("d-none");
+        }
+      });
+    }
 
     function updateNetworkIndicator() {
       const el = document.getElementById("networkStatusText");
@@ -3864,6 +4006,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       applyTheme(APP_DATA.settings.theme || "ocean");
       updateBadgesAndHeader();
+      updatePwaInstallBannerVisibility();
       setupSecretAdminTriggers();
       updateNetworkIndicator();
       switchCustomerTab("secCustStore");

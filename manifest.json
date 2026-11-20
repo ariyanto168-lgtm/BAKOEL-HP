@@ -1,1 +1,25 @@
-
+{
+  "name": "Bakoel HP - Smartphone Pilihan, Harga Bersahabat",
+  "short_name": "Bakoel HP",
+  "description": "Aplikasi Bakoel HP - Beli, Jual, Tukar Tambah, Aksesoris, Open Harga & Nego, Jasa Kirim Toko, QRIS & Transfer.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f1f5f9",
+  "theme_color": "#0284c7",
+  "icons": [
+    {
+      "src": "./logobakoelhp.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./logobakoelhp.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

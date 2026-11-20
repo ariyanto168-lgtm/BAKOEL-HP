@@ -1,1 +1,3873 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="ocean">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0284c7" id="metaThemeColor" />
+  <meta name="description" content="Bakoel HP - Smartphone Pilihan, Harga Bersahabat. Beli, Jual, Tukar Tambah, Aksesoris, Open Harga & Bisa Nego." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bakoel HP" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/png" href="./logobakoelhp.png" />
+  <link rel="apple-touch-icon" href="./logobakoelhp.png" />
+  <title>Bakoel HP - Smartphone Pilihan, Harga Bersahabat</title>
 
+  <!-- Bootstrap 5.3 & Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <style>
+    :root, [data-theme="ocean"] {
+      --app-primary: #0284c7;
+      --app-primary-dark: #0369a1;
+      --app-primary-soft: #e0f2fe;
+      --app-bg: #f1f5f9;
+      --app-card: #ffffff;
+      --app-text: #0f172a;
+      --app-muted: #64748b;
+      --app-border: #e2e8f0;
+      --app-nav-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    [data-theme="emerald"] {
+      --app-primary: #059669;
+      --app-primary-dark: #047857;
+      --app-primary-soft: #d1fae5;
+      --app-bg: #f0fdf4;
+      --app-card: #ffffff;
+      --app-text: #064e3b;
+      --app-muted: #4b5563;
+      --app-border: #d1fae5;
+      --app-nav-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    [data-theme="indigo"] {
+      --app-primary: #4f46e5;
+      --app-primary-dark: #4338ca;
+      --app-primary-soft: #e0e7ff;
+      --app-bg: #eef2ff;
+      --app-card: #ffffff;
+      --app-text: #1e1b4b;
+      --app-muted: #64748b;
+      --app-border: #c7d2fe;
+      --app-nav-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    [data-theme="sunset"] {
+      --app-primary: #ea580c;
+      --app-primary-dark: #c2410c;
+      --app-primary-soft: #ffedd5;
+      --app-bg: #fff7ed;
+      --app-card: #ffffff;
+      --app-text: #431407;
+      --app-muted: #78716c;
+      --app-border: #fed7aa;
+      --app-nav-bg: rgba(255, 255, 255, 0.95);
+    }
+
+    [data-theme="dark"] {
+      --app-primary: #38bdf8;
+      --app-primary-dark: #0284c7;
+      --app-primary-soft: rgba(56, 189, 248, 0.16);
+      --app-bg: #0b1120;
+      --app-card: #1e293b;
+      --app-text: #f8fafc;
+      --app-muted: #94a3b8;
+      --app-border: #334155;
+      --app-nav-bg: rgba(15, 23, 42, 0.96);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--app-bg);
+      color: var(--app-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      padding-bottom: calc(88px + env(safe-area-inset-bottom));
+      margin: 0;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .app-shell {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Top Header */
+    .top-header {
+      background: linear-gradient(135deg, var(--app-primary), var(--app-primary-dark));
+      color: #ffffff;
+      border-bottom-left-radius: 22px;
+      border-bottom-right-radius: 22px;
+      padding: 12px 14px 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+    }
+
+    .brand-logo {
+      width: 54px;
+      height: 54px;
+      border-radius: 15px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 2px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .store-title {
+      font-size: 1.06rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .store-subtitle {
+      font-size: 0.73rem;
+      opacity: 0.94;
+      line-height: 1.2;
+      margin: 2px 0 0;
+    }
+
+    .header-pill-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #ffffff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 3px 9px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .header-pill-btn:hover {
+      background: rgba(255, 255, 255, 0.32);
+      color: #ffffff;
+    }
+
+    /* Cards & Surfaces */
+    .app-card {
+      background-color: var(--app-card);
+      border: 1px solid var(--app-border);
+      border-radius: 16px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-theme {
+      background-color: var(--app-primary);
+      border-color: var(--app-primary);
+      color: #ffffff;
+      font-weight: 600;
+      border-radius: 11px;
+    }
+
+    .btn-theme:hover, .btn-theme:focus {
+      background-color: var(--app-primary-dark);
+      border-color: var(--app-primary-dark);
+      color: #ffffff;
+    }
+
+    .btn-theme-soft {
+      background-color: var(--app-primary-soft);
+      color: var(--app-primary);
+      border: none;
+      font-weight: 600;
+      border-radius: 11px;
+    }
+
+    .btn-theme-soft:hover {
+      background-color: var(--app-primary);
+      color: #ffffff;
+    }
+
+    .text-theme {
+      color: var(--app-primary) !important;
+    }
+
+    .bg-theme-soft {
+      background-color: var(--app-primary-soft) !important;
+      color: var(--app-primary) !important;
+    }
+
+    /* Security Identity Seal Box */
+    .security-seal-box {
+      border: 1.5px solid #16a34a;
+      background: linear-gradient(135deg, rgba(22, 163, 74, 0.08), rgba(2, 132, 199, 0.06));
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+
+    .security-seal-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 2px;
+      border: 1.5px solid #16a34a;
+      flex-shrink: 0;
+    }
+
+    /* Product Card */
+    .product-card {
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-thumb-wrap {
+      position: relative;
+      width: 100%;
+      height: 156px;
+      background: var(--app-primary-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .product-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .stock-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 8px;
+      backdrop-filter: blur(6px);
+    }
+
+    .brand-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: rgba(15, 23, 42, 0.75);
+      color: #fff;
+    }
+
+    .price-open {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--app-primary);
+      line-height: 1.2;
+    }
+
+    /* Gallery Upload Box */
+    .gallery-upload-box {
+      border: 2px dashed var(--app-primary);
+      background-color: var(--app-primary-soft);
+      border-radius: 14px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .gallery-preview-img {
+      width: 100%;
+      max-height: 170px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #0f172a;
+      display: block;
+      margin: 0 auto 8px;
+    }
+
+    /* Filter Chips */
+    .chip-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .chip-scroll::-webkit-scrollbar { display: none; }
+
+    .filter-chip {
+      white-space: nowrap;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--app-border);
+      background: var(--app-card);
+      color: var(--app-text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-chip.active {
+      background: var(--app-primary);
+      color: #ffffff;
+      border-color: var(--app-primary);
+    }
+
+    /* Thermal Receipt Preview Paper */
+    .receipt-paper-preview {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px dashed #94a3b8;
+      border-radius: 10px;
+      padding: 14px 12px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px;
+      line-height: 1.38;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .receipt-divider {
+      border-top: 1px dashed #64748b;
+      margin: 6px 0;
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--app-nav-bg);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid var(--app-border);
+      padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+      z-index: 1030;
+    }
+
+    .bottom-nav-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .nav-item-btn {
+      flex: 1;
+      border: none;
+      background: transparent;
+      color: var(--app-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 4px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      position: relative;
+      transition: all 0.15s ease;
+    }
+
+    .nav-item-btn i {
+      font-size: 1.25rem;
+      margin-bottom: 2px;
+    }
+
+    .nav-item-btn.active {
+      color: var(--app-primary);
+      background-color: var(--app-primary-soft);
+    }
+
+    .nav-badge {
+      position: absolute;
+      top: 2px;
+      right: 22%;
+      font-size: 0.62rem;
+      padding: 1px 5px;
+      border-radius: 999px;
+    }
+
+    /* Theme Swatch */
+    .theme-swatch {
+      border: 2px solid var(--app-border);
+      border-radius: 12px;
+      padding: 10px 8px;
+      text-align: center;
+      cursor: pointer;
+      background: var(--app-card);
+      font-size: 0.78rem;
+      font-weight: 700;
+      transition: all 0.15s;
+    }
+    .theme-swatch.active {
+      border-color: var(--app-primary);
+      box-shadow: 0 0 0 3px var(--app-primary-soft);
+    }
+    .swatch-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      margin: 0 auto 5px;
+    }
+
+    /* Footer Secret Trigger */
+    .app-footer {
+      text-align: center;
+      padding: 18px 12px 10px;
+      font-size: 0.76rem;
+      color: var(--app-muted);
+      user-select: none;
+    }
+    .secret-trigger {
+      cursor: pointer;
+      font-weight: 700;
+      padding: 3px 6px;
+      border-radius: 6px;
+    }
+    .secret-trigger:active {
+      background-color: var(--app-primary-soft);
+    }
+
+    /* Dark mode form overrides */
+    [data-theme="dark"] .form-control,
+    [data-theme="dark"] .form-select,
+    [data-theme="dark"] .input-group-text,
+    [data-theme="dark"] .modal-content,
+    [data-theme="dark"] .list-group-item {
+      background-color: #1e293b;
+      color: #f8fafc;
+      border-color: #334155;
+    }
+    [data-theme="dark"] .form-control:disabled,
+    [data-theme="dark"] .form-control[readonly] {
+      background-color: #0f172a;
+      color: #94a3b8;
+    }
+    [data-theme="dark"] .table {
+      color: #f8fafc;
+    }
+
+    /* Thermal 58mm Print Area */
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+      #printableReceiptArea, #printableReceiptArea * {
+        visibility: visible !important;
+      }
+      #printableReceiptArea {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 58mm;
+        padding: 2mm;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 11px;
+        line-height: 1.35;
+        color: #000 !important;
+        background: #fff !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVBAR -->
+  <header class="top-header">
+    <div class="app-shell">
+      <div class="d-flex align-items-center justify-content-between gap-2">
+        <div class="d-flex align-items-center gap-2 overflow-hidden">
+          <img id="headerLogo" class="brand-logo" src="./logobakoelhp.png" alt="Logo Bakoel HP" onclick="openSecurityVerifyModal()" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" />
+          <div class="overflow-hidden">
+            <div class="d-flex align-items-center gap-1">
+              <h1 id="headerStoreName" class="store-title text-truncate">BAKOEL HP</h1>
+              <span id="adminModeBadge" class="badge bg-warning text-dark d-none" style="font-size:0.64rem;">PENJUAL</span>
+            </div>
+            <p id="headerStoreSubtitle" class="store-subtitle text-truncate">Smartphone Pilihan, Harga Bersahabat</p>
+            <div class="d-flex align-items-center gap-1 mt-1 flex-wrap">
+              <button type="button" class="header-pill-btn py-0 px-2" style="font-size:0.64rem; background:rgba(22,163,74,0.35); border-color:rgba(134,239,172,0.5);" onclick="openSecurityVerifyModal()" title="Cek Identitas Pengamanan & Keaslian Toko">
+                <i class="bi bi-shield-fill-check text-warning"></i> Toko Terverifikasi
+              </button>
+              <span id="headerStoreAddress" class="text-white-50 text-truncate" style="font-size:0.64rem;">
+                <i class="bi bi-geo-alt-fill"></i> Semarang - Kendal
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-end gap-1 flex-shrink-0">
+          <div class="d-flex gap-1">
+            <button type="button" class="header-pill-btn" onclick="openShareAppModal()" title="Bagikan Link Publik & QR Instal Aplikasi">
+              <i class="bi bi-share-fill"></i> Bagikan
+            </button>
+            <button type="button" class="header-pill-btn" onclick="manualSync()" title="Sinkronkan Data">
+              <i id="syncIcon" class="bi bi-arrow-repeat"></i> <span id="networkStatusText">Online</span>
+            </button>
+          </div>
+          <span id="lastSyncBadge" class="text-white-50" style="font-size:0.63rem;">Lokal Siap</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="app-shell px-3 pt-3">
+
+    <!-- PWA INSTALL BANNER -->
+    <div id="pwaInstallBanner" class="app-card p-3 mb-3 border-0 d-none" style="background: linear-gradient(135deg, var(--app-primary-soft), var(--app-card)); border-left: 4px solid var(--app-primary) !important;">
+      <div class="d-flex align-items-center justify-content-between gap-2">
+        <div class="d-flex align-items-center gap-2">
+          <img src="./logobakoelhp.png" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Instal Bakoel HP" style="width:44px; height:44px; border-radius:12px; object-fit:contain; background:#fff; padding:2px;" />
+          <div>
+            <div class="fw-bold" style="font-size:0.88rem;">Instal Aplikasi Bakoel HP</div>
+            <div class="text-muted" style="font-size:0.74rem;">Pasang pintasan di layar utama HP untuk cek stok &amp; nego lebih cepat.</div>
+          </div>
+        </div>
+        <div class="d-flex gap-1 flex-shrink-0">
+          <button type="button" class="btn btn-sm btn-theme px-3" id="btnInstallPwa">
+            <i class="bi bi-download me-1"></i>Instal
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-secondary border-0" onclick="dismissPwaBanner()" aria-label="Tutup">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODE PEMBELI / CUSTUMER SECTIONS                                      -->
+    <!-- ===================================================================== -->
+    <div id="customerWorkspace">
+
+      <!-- TAB 1: KATALOG TOKO (OPEN HARGA & STOK) -->
+      <section id="secCustStore" class="view-section">
+        <!-- Layanan & Identitas Keamanan Toko -->
+        <div class="app-card p-2 px-3 mb-2 d-flex align-items-center justify-content-between flex-wrap gap-1" style="font-size:0.72rem;">
+          <div class="d-flex align-items-center gap-1 flex-wrap">
+            <span class="badge bg-primary bg-opacity-10 text-primary"><i class="bi bi-check-circle-fill me-1"></i>Beli</span>
+            <span class="badge bg-success bg-opacity-10 text-success"><i class="bi bi-check-circle-fill me-1"></i>Jual</span>
+            <span class="badge bg-warning bg-opacity-10 text-warning"><i class="bi bi-check-circle-fill me-1"></i>Tukar Tambah</span>
+            <span class="badge bg-info bg-opacity-10 text-info"><i class="bi bi-check-circle-fill me-1"></i>Aksesoris</span>
+          </div>
+          <button type="button" class="btn btn-link btn-sm p-0 text-decoration-none fw-bold text-theme" style="font-size:0.72rem;" onclick="openShareAppModal()">
+            <i class="bi bi-qr-code me-1"></i>Ajak Teman Instal
+          </button>
+        </div>
+
+        <!-- Bar Jasa Kirim & Pembayaran -->
+        <div class="app-card p-2 px-3 mb-3 d-flex align-items-center justify-content-between flex-wrap gap-2" style="font-size:0.74rem;">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-theme-soft"><i class="bi bi-tags-fill me-1"></i>Open Harga &amp; Nego</span>
+            <span class="badge bg-success bg-opacity-10 text-success"><i class="bi bi-truck me-1"></i>Jasa Kirim Toko</span>
+          </div>
+          <div class="text-muted fw-semibold">
+            <i class="bi bi-qr-code-scan me-1 text-theme"></i>QRIS &amp; Transfer
+          </div>
+        </div>
+
+        <!-- Search & Sort -->
+        <div class="row g-2 mb-2">
+          <div class="col-8">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text border-end-0"><i class="bi bi-search text-muted"></i></span>
+              <input type="text" id="custSearchInput" class="form-control border-start-0" placeholder="Cari tipe HP, RAM, kondisi..." oninput="renderCustomerCatalog()" />
+            </div>
+          </div>
+          <div class="col-4">
+            <select id="custSortSelect" class="form-select form-select-sm" onchange="renderCustomerCatalog()">
+              <option value="newest">Terbaru</option>
+              <option value="price_asc">Termurah</option>
+              <option value="price_desc">Termahal</option>
+              <option value="stock_desc">Stok Banyak</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Brand Chips -->
+        <div id="brandFilterChips" class="chip-scroll mb-3"></div>
+
+        <!-- Product Grid -->
+        <div id="customerProductGrid" class="row g-2"></div>
+      </section>
+
+      <!-- TAB 2: NEGO HARGA -->
+      <section id="secCustNego" class="view-section d-none">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div>
+            <h2 class="h6 fw-bold mb-0">Pengajuan &amp; Status Nego</h2>
+            <small class="text-muted">Ajukan penawaran harga ke penjual atau checkout nego disetujui</small>
+          </div>
+          <button type="button" class="btn btn-sm btn-theme" onclick="openNegoModal()">
+            <i class="bi bi-plus-circle me-1"></i>Nego Baru
+          </button>
+        </div>
+
+        <div class="app-card p-2 mb-3">
+          <div class="input-group input-group-sm">
+            <span class="input-group-text border-0 bg-transparent"><i class="bi bi-search"></i></span>
+            <input type="text" id="custNegoSearch" class="form-control border-0" placeholder="Cari Kode Nego, Nama Pembeli, atau No. WA..." oninput="renderCustomerNegos()" />
+          </div>
+        </div>
+
+        <div id="customerNegoList" class="d-flex flex-column gap-2"></div>
+      </section>
+
+      <!-- TAB 3: TRANSAKSI & JASA KIRIM -->
+      <section id="secCustTransactions" class="view-section d-none">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div>
+            <h2 class="h6 fw-bold mb-0">Transaksi &amp; Pengiriman</h2>
+            <small class="text-muted">Pantau pesanan, nota digital resmi, dan pembayaran QRIS/Transfer</small>
+          </div>
+          <button type="button" class="btn btn-sm btn-theme-soft" onclick="switchCustomerTab('secCustStore')">
+            <i class="bi bi-bag-plus me-1"></i>Belanja
+          </button>
+        </div>
+
+        <div class="app-card p-2 mb-3">
+          <div class="input-group input-group-sm">
+            <span class="input-group-text border-0 bg-transparent"><i class="bi bi-search"></i></span>
+            <input type="text" id="custTrxSearch" class="form-control border-0" placeholder="Cari No. Invoice, Nama, atau No. WA..." oninput="renderCustomerTransactions()" />
+          </div>
+        </div>
+
+        <div id="customerTransactionList" class="d-flex flex-column gap-2"></div>
+      </section>
+
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODE ADMIN / PENJUAL SECTIONS (Login via Double-Click Versi)          -->
+    <!-- ===================================================================== -->
+    <div id="adminWorkspace" class="d-none">
+
+      <!-- ADMIN TAB 1: LAPORAN PENJUALAN & LABA -->
+      <section id="secAdminReports" class="admin-section">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div>
+            <h2 class="h6 fw-bold mb-0">Laporan Penjualan &amp; Profit</h2>
+            <small class="text-muted">Rekap omzet, laba bersih, nota &amp; share WA pembeli</small>
+          </div>
+          <div class="d-flex gap-1">
+            <button type="button" class="btn btn-sm btn-theme-soft" onclick="openShareAppModal()" title="Share Link Publik Toko">
+              <i class="bi bi-share"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-theme-soft" onclick="exportSalesCsv()">
+              <i class="bi bi-file-earmark-spreadsheet me-1"></i>CSV
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Periode Laporan -->
+        <div class="app-card p-2 mb-3">
+          <div class="btn-group w-100 btn-group-sm" role="group">
+            <input type="radio" class="btn-check" name="reportPeriod" id="repToday" value="today" onchange="renderAdminReports()">
+            <label class="btn btn-outline-primary" for="repToday">Hari Ini</label>
+
+            <input type="radio" class="btn-check" name="reportPeriod" id="repMonth" value="month" checked onchange="renderAdminReports()">
+            <label class="btn btn-outline-primary" for="repMonth">Bulan Ini</label>
+
+            <input type="radio" class="btn-check" name="reportPeriod" id="repAll" value="all" onchange="renderAdminReports()">
+            <label class="btn btn-outline-primary" for="repAll">Semua</label>
+          </div>
+        </div>
+
+        <!-- KPI Summary Cards -->
+        <div class="row g-2 mb-3">
+          <div class="col-6">
+            <div class="app-card p-3 h-100">
+              <div class="text-muted" style="font-size:0.74rem;"><i class="bi bi-cash-stack text-theme me-1"></i>Total Omzet</div>
+              <div id="kpiOmzet" class="fw-bold fs-6 mt-1">Rp 0</div>
+              <div id="kpiOngkirInfo" class="text-muted" style="font-size:0.68rem;">Termasuk ongkir Rp 0</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="app-card p-3 h-100">
+              <div class="text-muted" style="font-size:0.74rem;"><i class="bi bi-graph-up-arrow text-success me-1"></i>Estimasi Laba Bersih</div>
+              <div id="kpiProfit" class="fw-bold fs-6 text-success mt-1">Rp 0</div>
+              <div id="kpiMarginInfo" class="text-muted" style="font-size:0.68rem;">Margin 0%</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="app-card p-3 h-100">
+              <div class="text-muted" style="font-size:0.74rem;"><i class="bi bi-phone text-primary me-1"></i>Unit Terjual</div>
+              <div id="kpiUnitsSold" class="fw-bold fs-6 mt-1">0 Unit</div>
+              <div id="kpiOrderCount" class="text-muted" style="font-size:0.68rem;">0 Transaksi sah</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="app-card p-3 h-100">
+              <div class="text-muted" style="font-size:0.74rem;"><i class="bi bi-chat-dots text-warning me-1"></i>Antrean Aktif</div>
+              <div id="kpiPendingQueue" class="fw-bold fs-6 mt-1">0 Nego / 0 Order</div>
+              <div class="text-muted" style="font-size:0.68rem;">Perlu tindak lanjut</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakdown Pembayaran & Jasa Kirim -->
+        <div class="row g-2 mb-3">
+          <div class="col-6">
+            <div class="app-card p-3 h-100">
+              <div class="fw-bold mb-2" style="font-size:0.8rem;"><i class="bi bi-wallet2 me-1 text-theme"></i>Metode Pembayaran</div>
+              <div id="paymentBreakdownList" style="font-size:0.76rem;"></div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="app-card p-3 h-100">
+              <div class="fw-bold mb-2" style="font-size:0.8rem;"><i class="bi bi-truck me-1 text-theme"></i>Jasa Kirim Toko</div>
+              <div id="shippingBreakdownList" style="font-size:0.76rem;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabel Rincian Penjualan + Aksi Preview/Print/WA Nota -->
+        <div class="app-card p-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="fw-bold" style="font-size:0.85rem;">Rincian Penjualan &amp; Cetak Nota</span>
+            <span id="reportRowCount" class="badge bg-theme-soft">0 data</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0" style="font-size:0.74rem;">
+              <thead>
+                <tr>
+                  <th>Invoice</th>
+                  <th>Unit &amp; Pembeli</th>
+                  <th class="text-end">Omzet / Laba</th>
+                  <th class="text-end">Nota</th>
+                </tr>
+              </thead>
+              <tbody id="adminReportTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADMIN TAB 2: KELOLA PRODUK & STOK -->
+      <section id="secAdminProducts" class="admin-section d-none">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div>
+            <h2 class="h6 fw-bold mb-0">Stok &amp; Foto Dagangan HP</h2>
+            <small class="text-muted">Upload foto dari galeri HP, atur modal &amp; harga open</small>
+          </div>
+          <button type="button" class="btn btn-sm btn-theme" onclick="openProductFormModal()">
+            <i class="bi bi-plus-lg me-1"></i>Tambah HP
+          </button>
+        </div>
+
+        <!-- Bar Kapasitas Memori Foto Dagangan -->
+        <div class="app-card p-2 px-3 mb-2">
+          <div class="d-flex justify-content-between align-items-center" style="font-size:0.74rem;">
+            <span class="fw-semibold"><i class="bi bi-hdd-stack text-theme me-1"></i>Kapasitas Memori Foto:</span>
+            <span id="adminMemText" class="fw-bold text-theme">0 KB / 4.200 KB</span>
+          </div>
+          <div class="progress mt-1" style="height: 6px;">
+            <div id="adminMemProgress" class="progress-bar bg-primary" role="progressbar" style="width: 0%;"></div>
+          </div>
+          <div id="adminMemSubtext" class="text-muted mt-1" style="font-size:0.68rem;">Kompresi otomatis aktif (±28 KB/foto • muat hingga ±135 unit HP)</div>
+        </div>
+
+        <div class="app-card p-2 mb-3">
+          <input type="text" id="adminProdSearch" class="form-control form-control-sm border-0" placeholder="Cari stok unit HP..." oninput="renderAdminProducts()" />
+        </div>
+
+        <div id="adminProductList" class="d-flex flex-column gap-2"></div>
+      </section>
+
+      <!-- ADMIN TAB 3: KELOLA NEGO & PESANAN -->
+      <section id="secAdminOrders" class="admin-section d-none">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <h2 class="h6 fw-bold mb-0">Kelola Nego &amp; Pesanan Masuk</h2>
+          <span class="badge bg-theme-soft" id="adminQueueBadge">Aktif</span>
+        </div>
+
+        <ul class="nav nav-pills nav-fill app-card p-1 mb-3" style="font-size:0.82rem;">
+          <li class="nav-item">
+            <button type="button" class="nav-link active fw-semibold py-1" id="subTabNegoBtn" onclick="switchAdminOrderSubTab('nego')">
+              Nego Masuk <span id="badgeAdminNegoCount" class="badge bg-warning text-dark ms-1">0</span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="nav-link fw-semibold py-1" id="subTabOrderBtn" onclick="switchAdminOrderSubTab('order')">
+              Pesanan Toko <span id="badgeAdminOrderCount" class="badge bg-danger ms-1">0</span>
+            </button>
+          </li>
+        </ul>
+
+        <div id="adminNegoContainer" class="d-flex flex-column gap-2"></div>
+        <div id="adminOrderContainer" class="d-flex flex-column gap-2 d-none"></div>
+      </section>
+
+      <!-- ADMIN TAB 4: PENGATURAN LENGKAP -->
+      <section id="secAdminSettings" class="admin-section d-none">
+        <h2 class="h6 fw-bold mb-3">Pengaturan Toko, Keamanan &amp; Sistem</h2>
+
+        <!-- A. Share Link Publik & QR Instalasi -->
+        <div class="app-card p-3 mb-3 border-primary border-opacity-25">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div class="fw-bold d-flex align-items-center gap-2" style="font-size:0.9rem;">
+                <i class="bi bi-share-fill text-theme"></i> Bagikan Link Publik &amp; QR Instal
+              </div>
+              <div class="text-muted" style="font-size:0.74rem;">Bagikan link toko agar pembeli &amp; sesama bakoel HP bisa langsung instal aplikasi.</div>
+            </div>
+            <button type="button" class="btn btn-sm btn-theme flex-shrink-0" onclick="openShareAppModal()">
+              <i class="bi bi-qr-code-scan me-1"></i>Buka Share
+            </button>
+          </div>
+        </div>
+
+        <!-- B. Identitas Header & Kop Toko -->
+        <div class="app-card p-3 mb-3">
+          <div class="fw-bold mb-2 d-flex align-items-center gap-2" style="font-size:0.9rem;">
+            <i class="bi bi-shop text-theme"></i> Identitas Header &amp; Kop Toko
+          </div>
+          <div class="mb-2">
+            <label class="form-label small fw-semibold mb-1">Nama Toko / Konter</label>
+            <input type="text" id="setStoreName" class="form-control form-control-sm" />
+          </div>
+          <div class="mb-2">
+            <label class="form-label small fw-semibold mb-1">Tagline / Slogan Header</label>
+            <input type="text" id="setStoreTagline" class="form-control form-control-sm" />
+          </div>
+          <div class="row g-2 mb-2">
+            <div class="col-7">
+              <label class="form-label small fw-semibold mb-1">Alamat / Kota Toko</label>
+              <input type="text" id="setStoreAddress" class="form-control form-control-sm" />
+            </div>
+            <div class="col-5">
+              <label class="form-label small fw-semibold mb-1">No. WA Toko (62...)</label>
+              <input type="text" id="setStorePhone" class="form-control form-control-sm" placeholder="62812..." />
+            </div>
+          </div>
+          <div class="mb-2">
+            <label class="form-label small fw-semibold mb-1">Logo Toko &amp; Identitas Keamanan (Default: <code>./logobakoelhp.png</code>)</label>
+            <div class="input-group input-group-sm">
+              <input type="text" id="setLogoUrl" class="form-control" placeholder="./logobakoelhp.png" />
+              <label class="btn btn-outline-secondary mb-0">
+                <i class="bi bi-images"></i> Galeri
+                <input type="file" accept="image/*" class="d-none" onchange="handleSmartImageUpload(event, 'setLogoUrl', null, 256, 25000)" />
+              </label>
+              <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('setLogoUrl').value='./logobakoelhp.png'; showToast('Logo dikembalikan ke Maskot Bakoel HP.');" title="Pakai Logo Maskot Bakoel HP">
+                Maskot
+              </button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-sm btn-theme w-100 mt-1" onclick="saveStoreIdentity()">
+            <i class="bi bi-check2-circle me-1"></i>Simpan Identitas Toko
+          </button>
+        </div>
+
+        <!-- C. Identitas Pengamanan Anti-Phishing & PIN Penjual -->
+        <div class="app-card p-3 mb-3">
+          <div class="fw-bold mb-2 d-flex align-items-center gap-2" style="font-size:0.9rem;">
+            <i class="bi bi-shield-fill-check text-success"></i> Identitas Pengamanan Anti-Phishing &amp; PIN
+          </div>
+          <div class="security-seal-box d-flex align-items-center gap-2 mb-2">
+            <img id="settingsSecurityLogo" src="./logobakoelhp.png" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Segel Keamanan" class="security-seal-avatar" />
+            <div style="font-size:0.74rem;">
+              <div class="fw-bold text-success"><i class="bi bi-patch-check-fill me-1"></i>Segel Visual Aktif: Maskot Bakoel HP</div>
+              <div class="text-muted">Gambar maskot ini tampil otomatis di layar login penjual, QRIS/transfer, dan nota resmi sebagai bukti keaslian aplikasi.</div>
+            </div>
+          </div>
+          <div class="mb-2">
+            <label class="form-label small fw-semibold mb-1">Frasa Identitas Keamanan (Anti-Phishing)</label>
+            <input type="text" id="setSecurityPhrase" class="form-control form-control-sm" placeholder="BAKOEL HP ASLI • SMARTPHONE PILIHAN HARGA BERSAHABAT" />
+          </div>
+          <div class="row g-2 mb-2">
+            <div class="col-4">
+              <label class="form-label small fw-semibold mb-1">PIN Baru (6 Digit)</label>
+              <input type="password" id="setNewPin" maxlength="6" inputmode="numeric" class="form-control form-control-sm" placeholder="123456" />
+            </div>
+            <div class="col-8">
+              <label class="form-label small fw-semibold mb-1">Pertanyaan Pemulihan</label>
+              <input type="text" id="setSecQuestion" class="form-control form-control-sm" />
+            </div>
+          </div>
+          <div class="mb-2">
+            <label class="form-label small fw-semibold mb-1">Jawaban Pemulihan PIN</label>
+            <input type="text" id="setSecAnswer" class="form-control form-control-sm" />
+          </div>
+          <button type="button" class="btn btn-sm btn-theme-soft w-100" onclick="saveAdminSecurity()">
+            <i class="bi bi-shield-lock me-1"></i>Simpan Pengamanan &amp; PIN
+          </button>
+        </div>
+
+        <!-- D. Pembayaran (QRIS & Rekening) & Jasa Kirim Toko -->
+        <div class="app-card p-3 mb-3">
+          <div class="fw-bold mb-2 d-flex align-items-center gap-2" style="font-size:0.9rem;">
+            <i class="bi bi-credit-card-2-front text-theme"></i> Pembayaran QRIS, Rekening &amp; Jasa Kirim
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label small fw-semibold mb-1">Gambar QRIS Toko (Ambil dari Galeri HP / URL)</label>
+            <div class="input-group input-group-sm">
+              <input type="text" id="setQrisImage" class="form-control" placeholder="Pilih foto QRIS dari galeri..." />
+              <label class="btn btn-outline-secondary mb-0">
+                <i class="bi bi-qr-code"></i> Galeri
+                <input type="file" accept="image/*" class="d-none" onchange="handleSmartImageUpload(event, 'setQrisImage', null, 520, 35000)" />
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold mb-1">NMID / Keterangan QRIS</label>
+            <input type="text" id="setQrisNmid" class="form-control form-control-sm" />
+          </div>
+
+          <!-- Rekening Bank List -->
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <label class="form-label small fw-semibold mb-0">Daftar Rekening Transfer / E-Wallet</label>
+              <button type="button" class="btn btn-xs btn-theme-soft py-0 px-2" style="font-size:0.75rem;" onclick="addBankRow()">+ Rekening</button>
+            </div>
+            <div id="settingsBankList" class="d-flex flex-column gap-2"></div>
+          </div>
+
+          <!-- Jasa Kirim Toko List -->
+          <div class="mb-2">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <label class="form-label small fw-semibold mb-0">Opsi Jasa Kirim Toko &amp; Ongkir</label>
+              <button type="button" class="btn btn-xs btn-theme-soft py-0 px-2" style="font-size:0.75rem;" onclick="addShippingRow()">+ Jasa Kirim</button>
+            </div>
+            <div id="settingsShippingList" class="d-flex flex-column gap-2"></div>
+          </div>
+
+          <button type="button" class="btn btn-sm btn-theme w-100 mt-2" onclick="savePaymentAndShipping()">
+            <i class="bi bi-save me-1"></i>Simpan Pembayaran &amp; Jasa Kirim
+          </button>
+        </div>
+
+        <!-- E. Koneksi Spreadsheet (Google Apps Script URL + Lock/Unlock) -->
+        <div class="app-card p-3 mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="fw-bold d-flex align-items-center gap-2" style="font-size:0.9rem;">
+              <i class="bi bi-cloud-check text-theme"></i> Koneksi Spreadsheet (GAS URL)
+            </div>
+            <button type="button" id="btnToggleUrlLock" class="btn btn-sm btn-outline-warning py-0 px-2" onclick="toggleGasUrlLock()">
+              <i class="bi bi-lock-fill me-1"></i>Terkunci
+            </button>
+          </div>
+          <p class="text-muted mb-2" style="font-size:0.74rem;">
+            Buka kunci untuk mengubah URL Web App Google Apps Script (<code>localStorage: app_api_url</code>).
+          </p>
+          <div class="mb-2">
+            <input type="url" id="setGasUrlInput" class="form-control form-control-sm" readonly disabled placeholder="https://script.google.com/macros/s/.../exec" />
+          </div>
+          <div class="d-flex gap-2">
+            <button type="button" id="btnSaveGasUrl" class="btn btn-sm btn-theme flex-grow-1" disabled onclick="saveGasUrl()">
+              <i class="bi bi-check-lg me-1"></i>Simpan Perubahan
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="confirmResetGasUrl()">
+              Reset Default
+            </button>
+          </div>
+          <button type="button" class="btn btn-sm btn-theme-soft w-100 mt-2" onclick="manualSync()">
+            <i class="bi bi-arrow-repeat me-1"></i>Sinkronisasi 2 Arah Sekarang
+          </button>
+        </div>
+
+        <!-- F. Pilihan Tema Warna -->
+        <div class="app-card p-3 mb-3">
+          <div class="fw-bold mb-2 d-flex align-items-center gap-2" style="font-size:0.9rem;">
+            <i class="bi bi-palette text-theme"></i> Tema Warna Aplikasi
+          </div>
+          <div class="row g-2">
+            <div class="col-4">
+              <div class="theme-swatch" data-theme-option="ocean" onclick="applyTheme('ocean')">
+                <div class="swatch-dot" style="background:#0284c7;"></div>Ocean
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="theme-swatch" data-theme-option="emerald" onclick="applyTheme('emerald')">
+                <div class="swatch-dot" style="background:#059669;"></div>Emerald
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="theme-swatch" data-theme-option="indigo" onclick="applyTheme('indigo')">
+                <div class="swatch-dot" style="background:#4f46e5;"></div>Indigo
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="theme-swatch" data-theme-option="sunset" onclick="applyTheme('sunset')">
+                <div class="swatch-dot" style="background:#ea580c;"></div>Sunset
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="theme-swatch" data-theme-option="dark" onclick="applyTheme('dark')">
+                <div class="swatch-dot" style="background:#0f172a; border:1px solid #38bdf8;"></div>Dark Mode
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- G. Backup, Kapasitas Memori & Restore JSON -->
+        <div class="app-card p-3 mb-3">
+          <div class="fw-bold mb-2 d-flex align-items-center gap-2" style="font-size:0.9rem;">
+            <i class="bi bi-database-down text-theme"></i> Kapasitas Memori &amp; Backup JSON
+          </div>
+          <div class="p-2 rounded-3 bg-theme-soft mb-2" style="font-size:0.75rem;">
+            <div class="d-flex justify-content-between">
+              <span>Memori Terpakai (Batas Maks 4.200 KB):</span>
+              <strong id="settingsMemUsage">0 KB</strong>
+            </div>
+            <div class="progress mt-1" style="height: 6px;">
+              <div id="settingsMemBar" class="progress-bar bg-primary" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="d-flex gap-2 mb-2">
+            <button type="button" class="btn btn-sm btn-outline-primary flex-grow-1" onclick="exportJsonBackup()">
+              <i class="bi bi-download me-1"></i>Export JSON
+            </button>
+            <label class="btn btn-sm btn-outline-success flex-grow-1 mb-0">
+              <i class="bi bi-upload me-1"></i>Restore JSON
+              <input type="file" accept=".json,application/json" class="d-none" onchange="handleImportJson(event)" />
+            </label>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-danger w-100" onclick="confirmResetDemoData()">
+            <i class="bi bi-arrow-counterclockwise me-1"></i>Reset Data Katalog Awal
+          </button>
+        </div>
+
+        <!-- H. Manajemen Sesi / Log Out -->
+        <div class="app-card p-3 mb-2 border-danger border-opacity-25">
+          <button type="button" class="btn btn-danger w-100 fw-bold" onclick="confirmAdminLogout()">
+            <i class="bi bi-box-arrow-right me-1"></i>Keluar dari Menu Penjual (Log Out)
+          </button>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- FOOTER DENGAN AKSES LOGIN ADMIN VIA VERSI & POWERED BY ARI GPM -->
+    <footer class="app-footer">
+      <div>Bakoel HP Marketplace • <span id="footerVersionTrigger" class="secret-trigger text-theme" title="Klik 2x untuk akses penjual">v1.2.0</span></div>
+      <div class="mt-1">
+        <span id="footerBrandTrigger" class="secret-trigger">Powered by Ari GPM</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- BOTTOM NAVIGATION BAR (MODE PEMBELI) -->
+  <nav id="customerBottomNav" class="bottom-nav">
+    <div class="bottom-nav-inner">
+      <button type="button" class="nav-item-btn active" data-target="secCustStore" onclick="switchCustomerTab('secCustStore')">
+        <i class="bi bi-shop"></i>
+        <span>Toko HP</span>
+      </button>
+      <button type="button" class="nav-item-btn" data-target="secCustNego" onclick="switchCustomerTab('secCustNego')">
+        <i class="bi bi-chat-square-quote"></i>
+        <span>Nego Harga</span>
+        <span id="custNegoBadge" class="badge bg-warning text-dark nav-badge d-none">0</span>
+      </button>
+      <button type="button" class="nav-item-btn" data-target="secCustTransactions" onclick="switchCustomerTab('secCustTransactions')">
+        <i class="bi bi-receipt-cutoff"></i>
+        <span>Transaksi</span>
+        <span id="custTrxBadge" class="badge bg-primary nav-badge d-none">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- BOTTOM NAVIGATION BAR (MODE PENJUAL / ADMIN) -->
+  <nav id="adminBottomNav" class="bottom-nav d-none">
+    <div class="bottom-nav-inner">
+      <button type="button" class="nav-item-btn active" data-target="secAdminReports" onclick="switchAdminTab('secAdminReports')">
+        <i class="bi bi-bar-chart-line"></i>
+        <span>Laporan</span>
+      </button>
+      <button type="button" class="nav-item-btn" data-target="secAdminProducts" onclick="switchAdminTab('secAdminProducts')">
+        <i class="bi bi-phone"></i>
+        <span>Produk</span>
+      </button>
+      <button type="button" class="nav-item-btn" data-target="secAdminOrders" onclick="switchAdminTab('secAdminOrders')">
+        <i class="bi bi-inboxes"></i>
+        <span>Nego &amp; Order</span>
+        <span id="adminAlertBadge" class="badge bg-danger nav-badge d-none">0</span>
+      </button>
+      <button type="button" class="nav-item-btn" data-target="secAdminSettings" onclick="switchAdminTab('secAdminSettings')">
+        <i class="bi bi-gear"></i>
+        <span>Pengaturan</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======================================================================= -->
+  <!-- MODALS (NO BROWSER ALERT / CONFIRM / PROMPT)                            -->
+  <!-- ======================================================================= -->
+
+  <!-- 1. Modal Detail Produk -->
+  <div class="modal fade" id="modalProductDetail" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-1">
+          <h5 class="modal-title fw-bold fs-6" id="detailProdTitle">Detail Unit HP</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body pt-1" id="detailProdBody"></div>
+        <div class="modal-footer border-0 pt-0 gap-2" id="detailProdFooter"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Modal Ajukan Nego (Pembeli) -->
+  <div class="modal fade" id="modalNego" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold fs-6"><i class="bi bi-tags text-theme me-1"></i>Ajukan Nego Harga</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="formNego" onsubmit="submitCustomerNego(event)">
+          <div class="modal-body">
+            <div class="mb-2">
+              <label class="form-label small fw-semibold mb-1">Pilih Unit HP</label>
+              <select id="negoProductId" class="form-select form-select-sm" required onchange="onNegoProductChange()"></select>
+            </div>
+            <div class="p-2 rounded-3 bg-theme-soft mb-2 d-flex justify-content-between align-items-center">
+              <span class="small fw-semibold">Harga Open Toko:</span>
+              <span id="negoOpenPriceDisplay" class="fw-bold text-theme">Rp 0</span>
+            </div>
+            <div class="row g-2 mb-2">
+              <div class="col-4">
+                <label class="form-label small fw-semibold mb-1">Jumlah Unit</label>
+                <input type="number" id="negoQty" class="form-control form-control-sm" min="1" value="1" required />
+              </div>
+              <div class="col-8">
+                <label class="form-label small fw-semibold mb-1">Harga Nego / Unit (Rp)</label>
+                <input type="number" id="negoOfferPrice" class="form-control form-control-sm" min="10000" step="5000" required placeholder="Contoh: 7500000" />
+              </div>
+            </div>
+            <div class="row g-2 mb-2">
+              <div class="col-6">
+                <label class="form-label small fw-semibold mb-1">Nama Pembeli / Konter</label>
+                <input type="text" id="negoBuyerName" class="form-control form-control-sm" required placeholder="Nama Anda" />
+              </div>
+              <div class="col-6">
+                <label class="form-label small fw-semibold mb-1">No. WhatsApp</label>
+                <input type="tel" id="negoBuyerWa" class="form-control form-control-sm" required placeholder="0812..." />
+              </div>
+            </div>
+            <div class="mb-0">
+              <label class="form-label small fw-semibold mb-1">Catatan Penawaran (Opsional)</label>
+              <input type="text" id="negoNote" class="form-control form-control-sm" placeholder="Contoh: Ambil 2 unit harga bakoel ya bos" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-sm btn-theme px-3"><i class="bi bi-send me-1"></i>Kirim Penawaran</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Modal Checkout (Beli Langsung / Pakai Harga Nego + Jasa Kirim + QRIS/Transfer) -->
+  <div class="modal fade" id="modalCheckout" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold fs-6"><i class="bi bi-bag-check text-theme me-1"></i>Checkout Pesanan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="formCheckout" onsubmit="submitCustomerOrder(event)">
+          <div class="modal-body">
+            <input type="hidden" id="chkProductId" />
+            <input type="hidden" id="chkNegoCode" />
+            <input type="hidden" id="chkUnitPrice" />
+
+            <!-- Ringkasan Unit -->
+            <div class="app-card p-2 mb-3 bg-theme-soft border-0">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div id="chkProdName" class="fw-bold small">Nama HP</div>
+                  <div id="chkPriceTypeBadge" class="badge bg-primary mt-1" style="font-size:0.68rem;">Harga Open</div>
+                </div>
+                <div class="text-end">
+                  <div id="chkUnitPriceText" class="fw-bold text-theme small">Rp 0</div>
+                  <small class="text-muted">per unit</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-2 mb-2">
+              <div class="col-4">
+                <label class="form-label small fw-semibold mb-1">Jumlah</label>
+                <input type="number" id="chkQty" class="form-control form-control-sm" min="1" value="1" required oninput="recalcCheckoutTotal()" />
+              </div>
+              <div class="col-8">
+                <label class="form-label small fw-semibold mb-1">Jasa Kirim Toko</label>
+                <select id="chkShippingSelect" class="form-select form-select-sm" required onchange="recalcCheckoutTotal()"></select>
+              </div>
+            </div>
+
+            <!-- Metode Pembayaran: QRIS atau Transfer -->
+            <div class="mb-2">
+              <label class="form-label small fw-semibold mb-1">Metode Pembayaran</label>
+              <div class="row g-2">
+                <div class="col-6">
+                  <input type="radio" class="btn-check" name="chkPaymentMethod" id="payQris" value="QRIS" checked onchange="toggleCheckoutPaymentBox()">
+                  <label class="btn btn-outline-primary btn-sm w-100 fw-semibold" for="payQris">
+                    <i class="bi bi-qr-code-scan me-1"></i>QRIS
+                  </label>
+                </div>
+                <div class="col-6">
+                  <input type="radio" class="btn-check" name="chkPaymentMethod" id="payTransfer" value="TRANSFER" onchange="toggleCheckoutPaymentBox()">
+                  <label class="btn btn-outline-primary btn-sm w-100 fw-semibold" for="payTransfer">
+                    <i class="bi bi-bank me-1"></i>Transfer Bank
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sub-pilihan Bank jika Transfer -->
+            <div id="chkBankSelectWrap" class="mb-2 d-none">
+              <label class="form-label small fw-semibold mb-1">Pilih Rekening Tujuan</label>
+              <select id="chkBankSelect" class="form-select form-select-sm"></select>
+            </div>
+
+            <!-- Data Penerima & Alamat Pengiriman -->
+            <div class="row g-2 mb-2">
+              <div class="col-6">
+                <label class="form-label small fw-semibold mb-1">Nama Penerima</label>
+                <input type="text" id="chkBuyerName" class="form-control form-control-sm" required placeholder="Nama lengkap" />
+              </div>
+              <div class="col-6">
+                <label class="form-label small fw-semibold mb-1">No. WhatsApp</label>
+                <input type="tel" id="chkBuyerWa" class="form-control form-control-sm" required placeholder="0812..." />
+              </div>
+            </div>
+            <div class="mb-2">
+              <label class="form-label small fw-semibold mb-1">Alamat Pengiriman / Patokan</label>
+              <textarea id="chkBuyerAddress" class="form-control form-control-sm" rows="2" required placeholder="Alamat lengkap pengiriman atau tulis 'Ambil di Konter'"></textarea>
+            </div>
+
+            <!-- Rincian Total Bayar -->
+            <div class="app-card p-2 mt-2" style="font-size:0.8rem;">
+              <div class="d-flex justify-content-between">
+                <span class="text-muted">Subtotal Unit:</span>
+                <span id="chkSubtotalText">Rp 0</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span class="text-muted">Ongkos Jasa Kirim:</span>
+                <span id="chkShippingCostText">Rp 0</span>
+              </div>
+              <hr class="my-1" />
+              <div class="d-flex justify-content-between fw-bold fs-6 text-theme">
+                <span>Total Bayar:</span>
+                <span id="chkGrandTotalText">Rp 0</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-sm btn-theme px-3"><i class="bi bi-check2-circle me-1"></i>Buat Pesanan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Modal Instruksi Pembayaran QRIS / Transfer (Dengan Segel Anti-Phishing) -->
+  <div class="modal fade" id="modalPaymentInfo" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold fs-6" id="payModalTitle">Instruksi Pembayaran</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="payModalBody"></div>
+        <div class="modal-footer gap-2" id="payModalFooter"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. MODAL PREVIEW NOTA, PRINT 58MM & SHARE WA.ME (PENJUAL & PEMBELI) -->
+  <div class="modal fade" id="modalReceiptPreview" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold fs-6"><i class="bi bi-receipt text-theme me-1"></i>Preview &amp; Bagikan Nota</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body bg-body-tertiary">
+          <div id="receiptPreviewPaper" class="receipt-paper-preview"></div>
+        </div>
+        <div class="modal-footer flex-column align-items-stretch gap-2">
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-sm btn-outline-dark flex-fill fw-semibold" id="btnPrintFromPreview">
+              <i class="bi bi-printer-fill me-1"></i>Print Nota 58mm
+            </button>
+            <button type="button" class="btn btn-sm btn-theme-soft flex-fill fw-semibold" id="btnShareGenericReceipt">
+              <i class="bi bi-share-fill me-1"></i>Share / Salin
+            </button>
+          </div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-success w-100 fw-bold" id="btnShareWaBuyerReceipt">
+            <i class="bi bi-whatsapp me-1"></i>Kirim Nota ke WhatsApp Pembeli (wa.me)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. MODAL BAGIKAN LINK PUBLIK & QR INSTAL APLIKASI -->
+  <div class="modal fade" id="modalShareApp" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold fs-6"><i class="bi bi-share-fill text-theme me-1"></i>Bagikan Link &amp; Instal Aplikasi</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+            <img id="shareModalLogo" src="./logobakoelhp.png" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Logo" style="width:48px; height:48px; border-radius:12px; object-fit:contain; background:#fff; padding:2px; border:1px solid #e2e8f0;" />
+            <div class="text-start">
+              <div class="fw-bold" id="shareModalStoreName">BAKOEL HP</div>
+              <div class="small text-muted">Scan QR atau bagikan link untuk instal aplikasi</div>
+            </div>
+          </div>
+
+          <!-- QR Code Link Publik -->
+          <div class="p-3 rounded-4 border bg-white d-inline-block my-2">
+            <img id="shareAppQrImg" src="" alt="QR Code Aplikasi" style="width:170px; height:170px; display:block;" onerror="this.style.display='none'; document.getElementById('shareQrOfflineFallback').classList.remove('d-none');" />
+            <div id="shareQrOfflineFallback" class="d-none py-3 px-2 text-dark">
+              <i class="bi bi-qr-code fs-1 text-primary"></i>
+              <div class="small fw-bold mt-1">Gunakan tombol Salin / WA di bawah</div>
+            </div>
+          </div>
+
+          <div class="text-start mt-2">
+            <label class="form-label small fw-semibold mb-1">Link Publik Toko (Siap Instal PWA):</label>
+            <div class="input-group input-group-sm">
+              <input type="text" id="sharePublicUrlInput" class="form-control" readonly />
+              <button type="button" class="btn btn-theme" onclick="copyPublicShareLink()">
+                <i class="bi bi-clipboard me-1"></i>Salin
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer gap-2">
+          <button type="button" class="btn btn-sm btn-theme-soft flex-fill fw-semibold" onclick="nativeShareAppLink()">
+            <i class="bi bi-box-arrow-up me-1"></i>Share Aplikasi
+          </button>
+          <a href="#" target="_blank" rel="noopener noreferrer" id="btnShareAppWhatsapp" class="btn btn-sm btn-success flex-fill fw-bold">
+            <i class="bi bi-whatsapp me-1"></i>Share via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. MODAL VERIFIKASI KEASLIAN TOKO & ANTI-PHISHING -->
+  <div class="modal fade" id="modalSecurityVerify" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-1">
+          <h5 class="modal-title fw-bold fs-6 text-success"><i class="bi bi-shield-fill-check me-1"></i>Identitas Keamanan &amp; Anti-Phishing</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body pt-1">
+          <!-- Segel Visual Maskot Bakoel HP -->
+          <div class="security-seal-box text-center p-3 mb-3">
+            <img id="verifyModalMascotImg" src="./logobakoelhp.png" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Identitas Pengamanan Bakoel HP" style="width:92px; height:92px; object-fit:contain; background:#fff; border-radius:18px; padding:4px; border:2px solid #16a34a;" />
+            <div class="fw-bold text-success mt-2" style="font-size:0.88rem;">
+              <i class="bi bi-patch-check-fill me-1"></i>SEGEL IDENTITAS RESMI TERVERIFIKASI
+            </div>
+            <div id="verifySecurityPhrase" class="badge bg-success mt-1 text-wrap" style="font-size:0.72rem;">
+              BAKOEL HP ASLI • SMARTPHONE PILIHAN HARGA BERSAHABAT
+            </div>
+          </div>
+
+          <div class="app-card p-2 px-3 mb-2 small">
+            <div class="d-flex justify-content-between py-1 border-bottom">
+              <span class="text-muted">Domain Aktif:</span>
+              <strong id="verifyDomainText" class="text-truncate ms-2" style="max-width:60%;">-</strong>
+            </div>
+            <div class="d-flex justify-content-between py-1 border-bottom">
+              <span class="text-muted">Protokol Koneksi:</span>
+              <strong id="verifyProtocolText" class="text-success">-</strong>
+            </div>
+            <div class="d-flex justify-content-between py-1 border-bottom">
+              <span class="text-muted">WhatsApp Resmi Toko:</span>
+              <strong id="verifyOfficialWaText">-</strong>
+            </div>
+            <div class="d-flex justify-content-between py-1">
+              <span class="text-muted">Rekening Resmi Terdaftar:</span>
+              <strong id="verifyOfficialBanksText" class="text-end">-</strong>
+            </div>
+          </div>
+
+          <div class="alert alert-warning py-2 px-3 mb-0 small rounded-3">
+            <div class="fw-bold mb-1"><i class="bi bi-exclamation-triangle-fill me-1"></i>Panduan Aman Anti-Penipuan:</div>
+            <ul class="mb-0 ps-3" style="font-size:0.74rem;">
+              <li>Pastikan logo maskot <strong>Bakoel HP</strong> &amp; frasa keamanan di atas tampil sebelum transfer.</li>
+              <li>Pembayaran sah <strong>HANYA</strong> ke QRIS / Rekening yang tercantum di dalam aplikasi ini.</li>
+              <li>Toko <strong>tidak pernah</strong> meminta kode OTP, password email, atau PIN ATM Anda.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-sm btn-success w-100 fw-semibold" data-bs-dismiss="modal">Saya Mengerti &amp; Lanjut Belanja</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Modal Login Admin / Penjual (Dengan Identitas Visual Maskot Bakoel HP) -->
+  <div class="modal fade" id="modalAdminLogin" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold fs-6"><i class="bi bi-shield-lock-fill text-theme me-1"></i>Login Menu Penjual</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Identitas Pengamanan Visual Sebelum Input PIN -->
+          <div class="security-seal-box d-flex align-items-center gap-2 mb-3">
+            <img id="loginSecurityMascotImg" src="./logobakoelhp.png" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Segel Login" class="security-seal-avatar" />
+            <div style="font-size:0.68rem; line-height:1.25;">
+              <div class="fw-bold text-success"><i class="bi bi-patch-check-fill"></i> Identitas Aman</div>
+              <div id="loginSecurityPhrase" class="text-muted fw-semibold">BAKOEL HP ASLI</div>
+            </div>
+          </div>
+
+          <!-- Form PIN -->
+          <div id="adminPinLoginBox">
+            <p class="text-muted small mb-2">Masukkan 6 digit PIN Penjual untuk mengelola produk, nota, nego, dan laporan.</p>
+            <input type="password" id="adminPinInput" maxlength="6" inputmode="numeric" class="form-control text-center fw-bold fs-5 mb-2" placeholder="••••••" onkeydown="if(event.key==='Enter') verifyAdminPin()" />
+            <div id="adminLoginError" class="text-danger small mb-2 d-none">PIN salah! Silakan coba lagi.</div>
+            <button type="button" class="btn btn-theme w-100 mb-2" onclick="verifyAdminPin()">Masuk Menu Penjual</button>
+            <div class="text-center">
+              <button type="button" class="btn btn-link btn-sm text-decoration-none p-0" onclick="togglePinRecoveryBox(true)">Lupa PIN Admin?</button>
+            </div>
+          </div>
+
+          <!-- Form Pemulihan PIN -->
+          <div id="adminPinRecoveryBox" class="d-none">
+            <p class="small fw-semibold mb-1">Pertanyaan Keamanan:</p>
+            <div id="recoveryQuestionText" class="p-2 rounded bg-theme-soft small mb-2"></div>
+            <input type="text" id="recoveryAnswerInput" class="form-control form-control-sm mb-2" placeholder="Jawaban keamanan..." />
+            <input type="password" id="recoveryNewPinInput" maxlength="6" inputmode="numeric" class="form-control form-control-sm mb-2" placeholder="PIN Baru (6 digit)" />
+            <div id="recoveryErrorText" class="text-danger small mb-2 d-none">Jawaban salah atau PIN harus 6 digit.</div>
+            <button type="button" class="btn btn-sm btn-theme w-100 mb-2" onclick="processPinRecovery()">Reset &amp; Masuk</button>
+            <div class="text-center">
+              <button type="button" class="btn btn-link btn-sm text-decoration-none p-0" onclick="togglePinRecoveryBox(false)">Kembali ke Login PIN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Modal Tambah / Edit Produk (Admin - Upload Foto Langsung dari Galeri HP) -->
+  <div class="modal fade" id="modalProductForm" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold fs-6" id="prodFormTitle">Tambah Unit HP</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="formProductAdmin" onsubmit="saveAdminProduct(event)">
+          <div class="modal-body">
+            <input type="hidden" id="editProdId" />
+            <input type="hidden" id="prodImage" />
+
+            <!-- AREA UPLOAD FOTO GALERI HP & KAMERA -->
+            <div class="mb-3">
+              <label class="form-label small fw-bold mb-1 d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-images text-theme me-1"></i>Foto Dagangan HP</span>
+                <span id="prodPhotoSizeBadge" class="badge bg-theme-soft" style="font-size:0.68rem;">Siap Upload Galeri</span>
+              </label>
+
+              <div class="gallery-upload-box">
+                <img id="prodPhotoPreview" src="" alt="Preview Foto HP" class="gallery-preview-img d-none" />
+                <div id="prodPhotoPlaceholder" class="py-2 text-muted small">
+                  <i class="bi bi-phone-flip fs-2 text-theme d-block mb-1"></i>
+                  Ambil foto unit HP langsung dari <strong>Galeri HP</strong> Anda
+                </div>
+
+                <div class="d-flex gap-2 justify-content-center mt-1">
+                  <label class="btn btn-sm btn-theme flex-grow-1 mb-0">
+                    <i class="bi bi-images me-1"></i>Pilih dari Galeri HP
+                    <input type="file" accept="image/*" class="d-none" onchange="handleProductGalleryUpload(event)" />
+                  </label>
+                  <label class="btn btn-sm btn-outline-primary mb-0" title="Ambil foto dengan kamera">
+                    <i class="bi bi-camera-fill"></i>
+                    <input type="file" accept="image/*" capture="environment" class="d-none" onchange="handleProductGalleryUpload(event)" />
+                  </label>
+                  <button type="button" id="btnClearProdPhoto" class="btn btn-sm btn-outline-danger d-none" onclick="clearProductPhoto()" title="Hapus Foto">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+
+                <div class="mt-2 pt-1 border-top border-primary border-opacity-25 text-start" style="font-size:0.68rem;">
+                  <div class="d-flex justify-content-between text-muted">
+                    <span>Memori terpakai: <strong id="modalMemUsedText">0 KB</strong> / 4.200 KB</span>
+                    <span id="modalRemainingSlotsText" class="text-success fw-semibold">±135 foto tersisa</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-2 mb-2">
+              <div class="col-8">
+                <label class="form-label small fw-semibold mb-1">Nama / Tipe HP</label>
+                <input type="text" id="prodName" class="form-control form-control-sm" required placeholder="Contoh: iPhone 13 128GB iBox" />
+              </div>
+              <div class="col-4">
+                <label class="form-label small fw-semibold mb-1">Merk</label>
+                <select id="prodBrand" class="form-select form-select-sm">
+                  <option value="iPhone">iPhone</option>
+                  <option value="Samsung">Samsung</option>
+                  <option value="Xiaomi">Xiaomi</option>
+                  <option value="Oppo">Oppo</option>
+                  <option value="Vivo">Vivo</option>
+                  <option value="Realme">Realme</option>
+                  <option value="Infinix">Infinix</option>
+                  <option value="Lainnya">Lainnya</option>
+                </select>
+              </div>
+            </div>
+            <div class="row g-2 mb-2">
+              <div class="col-6">
+                <label class="form-label small fw-semibold mb-1">Varian RAM/ROM</label>
+                <input type="text" id="prodVariant" class="form-control form-control-sm" required placeholder="8/256GB" />
+              </div>
+              <div class="col-6">
+                <label class="form-label small fw-semibold mb-1">Kondisi &amp; Kelengkapan</label>
+                <input type="text" id="prodCondition" class="form-control form-control-sm" required placeholder="Second Mulus Fullset" />
+              </div>
+            </div>
+            <div class="row g-2 mb-2">
+              <div class="col-4">
+                <label class="form-label small fw-semibold mb-1">Harga Modal (Rp)</label>
+                <input type="number" id="prodCostPrice" class="form-control form-control-sm" min="0" required placeholder="7500000" />
+              </div>
+              <div class="col-4">
+                <label class="form-label small fw-semibold mb-1">Harga Open (Rp)</label>
+                <input type="number" id="prodOpenPrice" class="form-control form-control-sm" min="0" required placeholder="8200000" />
+              </div>
+              <div class="col-4">
+                <label class="form-label small fw-semibold mb-1">Stok (Unit)</label>
+                <input type="number" id="prodStock" class="form-control form-control-sm" min="0" value="1" required />
+              </div>
+            </div>
+            <div class="mb-0">
+              <label class="form-label small fw-semibold mb-1">Deskripsi / Spek Tambahan</label>
+              <textarea id="prodDesc" class="form-control form-control-sm" rows="2" placeholder="BH 92%, TrueTone ON, FaceID aman, bebas reset..."></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-sm btn-theme px-3"><i class="bi bi-check2-circle me-1"></i>Simpan Unit HP</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Modal Respon Nego (Admin) -->
+  <div class="modal fade" id="modalAdminNegoReply" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold fs-6">Respon Penawaran Nego</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="replyNegoId" />
+          <div id="replyNegoSummary" class="p-2 rounded bg-theme-soft small mb-3"></div>
+          <div class="mb-2">
+            <label class="form-label small fw-semibold mb-1">Keputusan Penjual</label>
+            <select id="replyNegoStatus" class="form-select form-select-sm" onchange="onReplyStatusChange()">
+              <option value="approved">Setujui Harga Tawar Pembeli</option>
+              <option value="countered">Tawar Balik (Counter Offer)</option>
+              <option value="rejected">Tolak Penawaran</option>
+            </select>
+          </div>
+          <div id="replyCounterPriceWrap" class="mb-2 d-none">
+            <label class="form-label small fw-semibold mb-1">Harga Tawar Balik / Unit (Rp)</label>
+            <input type="number" id="replyCounterPrice" class="form-control form-control-sm" step="5000" />
+          </div>
+          <div class="mb-0">
+            <label class="form-label small fw-semibold mb-1">Catatan untuk Pembeli</label>
+            <input type="text" id="replyAdminNote" class="form-control form-control-sm" placeholder="Contoh: Gas bosku, silakan langsung checkout!" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-sm btn-theme px-3" onclick="submitAdminNegoReply()">Kirim Keputusan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. CUSTOM CONFIRMATION MODAL (#modalConfirm - PENGGANTI confirm() BROWSER) -->
+  <div class="modal fade" id="modalConfirm" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-1">
+          <h5 class="modal-title fw-bold fs-6" id="confirmModalTitle">Konfirmasi</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body pt-1 small" id="confirmModalMessage">Apakah Anda yakin?</div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-sm btn-danger px-3" id="confirmModalActionBtn">Ya, Lanjutkan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION (PENGGANTI alert() BROWSER) -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1090;">
+    <div id="appToast" class="toast align-items-center text-bg-dark border-0 rounded-3 shadow" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body small fw-semibold" id="appToastBody">Notifikasi</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AREA CETAK NOTA THERMAL 58MM -->
+  <div id="printableReceiptArea" class="d-none"></div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    /* =========================================================================
+       1. KONFIGURASI DEFAULT, LOGO MASKOT BAKOEL HP & STATE APLIKASI
+       ========================================================================= */
+    const DEFAULT_API_URL = "https://script.google.com/macros/s/GANTI_DENGAN_ID_DEPLOYMENT_ANDA/exec";
+    const APP_VERSION = "v1.2.0";
+    const STORAGE_KEY = "bakoel_hp_app_data_v1";
+    const API_URL_KEY = "app_api_url";
+    const DEFAULT_MASCOT_LOGO_PATH = "./logobakoelhp.png";
+
+    // Batas maksimal memori aman agar aplikasi tetap ringan, bebas crash, & sinkron ke Google Sheets
+    const MAX_STORAGE_LIMIT_KB = 4200;
+    const MAX_SINGLE_PHOTO_CHARS = 40000;
+    const TARGET_PHOTO_DIMENSION = 720;
+
+    // Fallback SVG Ilustrasi Maskot Bakoel HP (jika logobakoelhp.png belum diunggah ke repo)
+    const FALLBACK_MASCOT_SVG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='bgG' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230284c7'/%3E%3Cstop offset='100%25' stop-color='%231d4ed8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' rx='38' fill='url(%23bgG)'/%3E%3Cpath d='M25 45 L175 45 L165 68 L35 68 Z' fill='%23ef4444'/%3E%3Cpath d='M55 45 L80 45 L75 68 L50 68 Z M115 45 L140 45 L135 68 L110 68 Z' fill='%23ffffff'/%3E%3Ccircle cx='100' cy='96' r='30' fill='%23fde68a'/%3E%3Cpath d='M70 84 Q100 54 130 84 Z' fill='%23111827'/%3E%3Crect x='82' y='66' width='36' height='12' rx='4' fill='%23facc15'/%3E%3Ccircle cx='90' cy='96' r='3.5' fill='%23111827'/%3E%3Ccircle cx='110' cy='96' r='3.5' fill='%23111827'/%3E%3Cpath d='M92 106 Q100 115 108 106' stroke='%23dc2626' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Crect x='134' y='74' width='32' height='54' rx='6' fill='%23111827' stroke='%23ffffff' stroke-width='2'/%3E%3Crect x='138' y='79' width='24' height='42' rx='3' fill='%236366f1'/%3E%3Crect x='18' y='126' width='164' height='36' rx='12' fill='%23facc15' stroke='%231e3a8a' stroke-width='3'/%3E%3Ctext x='100' y='150' font-family='Arial,sans-serif' font-size='22' font-weight='900' fill='%231e3a8a' text-anchor='middle'%3EBakoel HP%3C/text%3E%3Crect x='26' y='165' width='148' height='20' rx='10' fill='%23dc2626'/%3E%3Ctext x='100' y='178' font-family='Arial,sans-serif' font-size='8.5' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3ESmartphone Pilihan, Harga Bersahabat%3C/text%3E%3C/svg%3E";
+
+    function createPhoneIllustration(label, bgHex) {
+      const safeLabel = encodeURIComponent(label);
+      return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23${bgHex}'/%3E%3Crect x='124' y='20' width='72' height='140' rx='14' fill='%230f172a'/%3E%3Crect x='129' y='27' width='62' height='126' rx='10' fill='%23ffffff'/%3E%3Crect x='150' y='31' width='20' height='4' rx='2' fill='%230f172a'/%3E%3Ctext x='160' y='94' font-family='sans-serif' font-size='11' font-weight='bold' fill='%230284c7' text-anchor='middle'%3E${safeLabel}%3C/text%3E%3C/svg%3E`;
+    }
+
+    function getDefaultAppData() {
+      const todayIso = new Date().toISOString();
+      return {
+        settings: {
+          storeName: "BAKOEL HP",
+          storeTagline: "Smartphone Pilihan, Harga Bersahabat",
+          storeAddress: "Semarang - Kendal, Jawa Tengah",
+          storePhone: "6281234567890",
+          logoUrl: DEFAULT_MASCOT_LOGO_PATH,
+          securityPhrase: "BAKOEL HP ASLI • SMARTPHONE PILIHAN HARGA BERSAHABAT",
+          theme: "ocean",
+          adminPin: "123456",
+          securityQuestion: "Nama konter pertama kita?",
+          securityAnswer: "prisma",
+          qrisImage: "",
+          qrisNmid: "ID1026000889912 • BAKOEL HP OFFICIAL",
+          bankAccounts: [
+            { id: "b1", bank: "BCA", number: "1234567890", holder: "Yudi Ariyanto" },
+            { id: "b2", bank: "BRI", number: "098701001234509", holder: "Yudi Ariyanto" },
+            { id: "b3", bank: "SeaBank / DANA", number: "081234567890", holder: "Bakoel HP" }
+          ],
+          shippingMethods: [
+            { id: "s1", name: "Ambil di Toko (Self Pickup)", cost: 0, eta: "Langsung di Konter" },
+            { id: "s2", name: "Kurir Toko (Antar Dalam Kota / COD)", cost: 15000, eta: "1 - 3 Jam Sampai" },
+            { id: "s3", name: "Kurir Toko (Luar Kecamatan)", cost: 25000, eta: "Hari yang Sama" },
+            { id: "s4", name: "Ekspedisi Reguler (J&T / JNE)", cost: 20000, eta: "1 - 2 Hari Kerja" }
+          ]
+        },
+        products: [
+          {
+            id: "PRD-001",
+            name: "iPhone 13 128GB iBox",
+            brand: "iPhone",
+            variant: "4/128GB Midnight",
+            condition: "Second Mulus 98% Fullset",
+            description: "Resmi iBox PA/A, Battery Health 91%, TrueTone & FaceID normal jaya, bebas reset.",
+            costPrice: 7300000,
+            openPrice: 7950000,
+            stock: 3,
+            image: createPhoneIllustration("iPhone 13", "e0f2fe"),
+            updatedAt: todayIso
+          },
+          {
+            id: "PRD-002",
+            name: "Samsung Galaxy A55 5G",
+            brand: "Samsung",
+            variant: "8/256GB Awesome Iceblue",
+            condition: "Like New Fullset Ori",
+            description: "Garansi SEIN aktif panjang, mulus tanpa dent, kelengkapan dus + kabel original.",
+            costPrice: 4650000,
+            openPrice: 5150000,
+            stock: 4,
+            image: createPhoneIllustration("Galaxy A55", "d1fae5"),
+            updatedAt: todayIso
+          },
+          {
+            id: "PRD-003",
+            name: "Xiaomi Redmi Note 13 Pro 5G",
+            brand: "Xiaomi",
+            variant: "8/256GB Aurora Purple",
+            condition: "Second Mulus 97% Fullset",
+            description: "Kamera 200MP OIS jernih, layar AMOLED 120Hz, charger bawaan 67W lengkap.",
+            costPrice: 3150000,
+            openPrice: 3550000,
+            stock: 2,
+            image: createPhoneIllustration("Note 13 Pro", "ffedd5"),
+            updatedAt: todayIso
+          },
+          {
+            id: "PRD-004",
+            name: "OPPO Reno11 5G",
+            brand: "Oppo",
+            variant: "8/256GB Wave Green",
+            condition: "Unit + Charger Ori 67W",
+            description: "Kondisi fisik 96% terawat, sinyal aman permanen, siap pakai harian atau jual lagi.",
+            costPrice: 3400000,
+            openPrice: 3850000,
+            stock: 2,
+            image: createPhoneIllustration("Reno11 5G", "e0e7ff"),
+            updatedAt: todayIso
+          }
+        ],
+        negos: [],
+        transactions: [],
+        lastSync: null
+      };
+    }
+
+    let APP_DATA = loadAppData();
+    let isAdminLoggedIn = false;
+    let selectedBrandFilter = "Semua";
+    let isGasUrlUnlocked = false;
+    let deferredInstallPrompt = null;
+    let confirmCallback = null;
+    let adminIdleTimer = null;
+    const ADMIN_IDLE_TIMEOUT_MS = 2 * 60 * 1000; // 2 Menit auto-lock keamanan sesi penjual
+
+    function loadAppData() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) {
+          const def = getDefaultAppData();
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(def));
+          return def;
+        }
+        const parsed = JSON.parse(raw);
+        const def = getDefaultAppData();
+        return {
+          settings: { ...def.settings, ...(parsed.settings || {}) },
+          products: Array.isArray(parsed.products) ? parsed.products : def.products,
+          negos: Array.isArray(parsed.negos) ? parsed.negos : [],
+          transactions: Array.isArray(parsed.transactions) ? parsed.transactions : [],
+          lastSync: parsed.lastSync || null
+        };
+      } catch (err) {
+        const def = getDefaultAppData();
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(def));
+        return def;
+      }
+    }
+
+    function getActiveLogoSrc() {
+      return (APP_DATA.settings.logoUrl && APP_DATA.settings.logoUrl.trim() !== "")
+        ? APP_DATA.settings.logoUrl.trim()
+        : DEFAULT_MASCOT_LOGO_PATH;
+    }
+
+    function getStorageUsageStats() {
+      const jsonStr = JSON.stringify(APP_DATA);
+      const actualUtf8Kb = Math.round(new Blob([jsonStr]).size / 1024);
+      const pct = Math.min(100, Math.round((actualUtf8Kb / MAX_STORAGE_LIMIT_KB) * 100));
+      const remainingKb = Math.max(0, MAX_STORAGE_LIMIT_KB - actualUtf8Kb);
+      const estRemainingPhotos = Math.floor(remainingKb / 28);
+      return { usedKb: actualUtf8Kb, maxKb: MAX_STORAGE_LIMIT_KB, pct, remainingKb, estRemainingPhotos };
+    }
+
+    function saveAppData(triggerAutoSync = true) {
+      const stats = getStorageUsageStats();
+      if (stats.usedKb > MAX_STORAGE_LIMIT_KB) {
+        showToast(`Batas maksimal memori (${MAX_STORAGE_LIMIT_KB} KB) tercapai! Hapus produk lama atau kurangi foto.`);
+        return false;
+      }
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(APP_DATA));
+        updateBadgesAndHeader();
+        if (triggerAutoSync && navigator.onLine && hasCustomGasUrl()) {
+          syncData(true);
+        }
+        return true;
+      } catch (err) {
+        showToast("Memori browser penuh! Silakan hapus beberapa produk lama atau export backup JSON.");
+        return false;
+      }
+    }
+
+    function getApiUrl() {
+      const saved = localStorage.getItem(API_URL_KEY);
+      return (saved && saved.trim() !== "") ? saved.trim() : DEFAULT_API_URL;
+    }
+
+    function hasCustomGasUrl() {
+      const url = getApiUrl();
+      return url && url.startsWith("https://script.google.com/") && !url.includes("GANTI_DENGAN_ID_DEPLOYMENT_ANDA");
+    }
+
+    /* =========================================================================
+       2. SMART ADAPTIVE PHOTO COMPRESSION (GALERI HP -> JERNIH & HEMAT MEMORI)
+       ========================================================================= */
+    function compressImageFileToBudget(file, maxDim = TARGET_PHOTO_DIMENSION, maxChars = MAX_SINGLE_PHOTO_CHARS) {
+      return new Promise((resolve, reject) => {
+        const objectUrl = URL.createObjectURL(file);
+        const img = new Image();
+
+        img.onload = function () {
+          URL.revokeObjectURL(objectUrl);
+
+          let currentDim = maxDim;
+          let quality = 0.80;
+          let resultDataUrl = "";
+
+          for (let attempt = 0; attempt < 7; attempt++) {
+            let w = img.width;
+            let h = img.height;
+
+            if (w > currentDim || h > currentDim) {
+              if (w > h) {
+                h = Math.round((h * currentDim) / w);
+                w = currentDim;
+              } else {
+                w = Math.round((w * currentDim) / h);
+                h = currentDim;
+              }
+            }
+
+            const canvas = document.createElement("canvas");
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext("2d");
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = "high";
+            ctx.drawImage(img, 0, 0, w, h);
+
+            resultDataUrl = canvas.toDataURL("image/jpeg", quality);
+
+            if (resultDataUrl.length <= maxChars) {
+              break;
+            }
+
+            if (quality > 0.52) {
+              quality -= 0.10;
+            } else {
+              currentDim = Math.round(currentDim * 0.82);
+              quality = 0.62;
+            }
+          }
+
+          const sizeKb = Math.max(1, Math.round((resultDataUrl.length * 0.75) / 1024));
+          resolve({ dataUrl: resultDataUrl, sizeKb, charLength: resultDataUrl.length });
+        };
+
+        img.onerror = function () {
+          URL.revokeObjectURL(objectUrl);
+          reject(new Error("Gagal membaca file gambar dari galeri."));
+        };
+
+        img.src = objectUrl;
+      });
+    }
+
+    async function handleProductGalleryUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const stats = getStorageUsageStats();
+      const existingImg = document.getElementById("prodImage").value || "";
+      const isReplacingOwnPhoto = existingImg.startsWith("data:image/jpeg");
+
+      if (!isReplacingOwnPhoto && stats.remainingKb < 35) {
+        showToast(`Batas maksimal memori (${MAX_STORAGE_LIMIT_KB} KB) sudah penuh! Hapus produk lama terlebih dahulu.`);
+        event.target.value = "";
+        return;
+      }
+
+      const badge = document.getElementById("prodPhotoSizeBadge");
+      badge.textContent = "Mengoptimalkan foto...";
+
+      try {
+        const compressed = await compressImageFileToBudget(file, TARGET_PHOTO_DIMENSION, MAX_SINGLE_PHOTO_CHARS);
+        document.getElementById("prodImage").value = compressed.dataUrl;
+        updateProductPhotoPreview(compressed.dataUrl, compressed.sizeKb);
+        showToast(`Foto berhasil dimuat (${compressed.sizeKb} KB • Jernih & hemat memori).`);
+      } catch (err) {
+        badge.textContent = "Gagal memuat";
+        showToast("Gagal memproses foto dari galeri. Coba pilih foto lain.");
+      }
+      event.target.value = "";
+    }
+
+    function updateProductPhotoPreview(src, sizeKb = null) {
+      const previewEl = document.getElementById("prodPhotoPreview");
+      const placeholderEl = document.getElementById("prodPhotoPlaceholder");
+      const clearBtn = document.getElementById("btnClearProdPhoto");
+      const badge = document.getElementById("prodPhotoSizeBadge");
+
+      if (src && !src.startsWith("data:image/svg+xml")) {
+        previewEl.src = src;
+        previewEl.classList.remove("d-none");
+        placeholderEl.classList.add("d-none");
+        clearBtn.classList.remove("d-none");
+        const estKb = sizeKb || Math.max(1, Math.round((src.length * 0.75) / 1024));
+        badge.textContent = `Foto Siap (${estKb} KB)`;
+      } else {
+        previewEl.src = "";
+        previewEl.classList.add("d-none");
+        placeholderEl.classList.remove("d-none");
+        clearBtn.classList.add("d-none");
+        badge.textContent = "Belum Ada Foto Galeri";
+      }
+
+      const stats = getStorageUsageStats();
+      document.getElementById("modalMemUsedText").textContent = `${stats.usedKb.toLocaleString("id-ID")} KB`;
+      document.getElementById("modalRemainingSlotsText").textContent = `±${stats.estRemainingPhotos} foto tersisa`;
+    }
+
+    function clearProductPhoto() {
+      document.getElementById("prodImage").value = "";
+      updateProductPhotoPreview("");
+      showToast("Foto produk dihapus.");
+    }
+
+    async function handleSmartImageUpload(event, targetInputId, previewId = null, maxDim = 480, maxChars = 35000) {
+      const file = event.target.files[0];
+      if (!file) return;
+      try {
+        const compressed = await compressImageFileToBudget(file, maxDim, maxChars);
+        document.getElementById(targetInputId).value = compressed.dataUrl;
+        showToast(`Gambar berhasil dimuat (${compressed.sizeKb} KB).`);
+      } catch (err) {
+        showToast("Gagal memuat gambar.");
+      }
+      event.target.value = "";
+    }
+
+    /* =========================================================================
+       3. FORMATTER & HELPER UI (BEBAS ALERT/CONFIRM BROWSER)
+       ========================================================================= */
+    function formatRupiah(num) {
+      const val = Number(num) || 0;
+      return "Rp " + val.toLocaleString("id-ID");
+    }
+
+    function formatDateShort(isoStr) {
+      if (!isoStr) return "-";
+      const d = new Date(isoStr);
+      return d.toLocaleDateString("id-ID", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function generateReceiptAuthCode(trx) {
+      const raw = `${trx.invoiceNo}-${trx.totalAmount}-${trx.createdAt}-${APP_DATA.settings.storeName}`;
+      let hash = 0;
+      for (let i = 0; i < raw.length; i++) {
+        hash = ((hash << 5) - hash) + raw.charCodeAt(i);
+        hash |= 0;
+      }
+      return "BHP-" + Math.abs(hash).toString(36).toUpperCase().padStart(6, "0").slice(0, 6);
+    }
+
+    function showToast(message) {
+      const toastEl = document.getElementById("appToast");
+      document.getElementById("appToastBody").textContent = message;
+      const toast = bootstrap.Toast.getOrCreateInstance(toastEl, { delay: 2800 });
+      toast.show();
+    }
+
+    function showConfirmModal(title, message, btnText, btnClass, onConfirm) {
+      document.getElementById("confirmModalTitle").textContent = title;
+      document.getElementById("confirmModalMessage").textContent = message;
+      const btn = document.getElementById("confirmModalActionBtn");
+      btn.textContent = btnText || "Ya, Lanjutkan";
+      btn.className = "btn btn-sm px-3 " + (btnClass || "btn-danger");
+      confirmCallback = onConfirm;
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalConfirm")).show();
+    }
+
+    document.getElementById("confirmModalActionBtn").addEventListener("click", function () {
+      const modalInst = bootstrap.Modal.getInstance(document.getElementById("modalConfirm"));
+      if (modalInst) modalInst.hide();
+      if (typeof confirmCallback === "function") {
+        const cb = confirmCallback;
+        confirmCallback = null;
+        cb();
+      }
+    });
+
+    function copyTextToClipboard(text, label) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => showToast(`${label} berhasil disalin: ${text}`));
+      } else {
+        const tmp = document.createElement("textarea");
+        tmp.value = text;
+        document.body.appendChild(tmp);
+        tmp.select();
+        document.execCommand("copy");
+        document.body.removeChild(tmp);
+        showToast(`${label} disalin: ${text}`);
+      }
+    }
+
+    /* =========================================================================
+       4. PENGAMANAN TOKO (ANTI-PHISHING, IDENTITAS VISUAL, SHARE LINK PUBLIK)
+       ========================================================================= */
+    function openSecurityVerifyModal() {
+      const s = APP_DATA.settings;
+      const logoSrc = getActiveLogoSrc();
+      document.getElementById("verifyModalMascotImg").src = logoSrc;
+      document.getElementById("verifySecurityPhrase").textContent = s.securityPhrase || "BAKOEL HP ASLI • SMARTPHONE PILIHAN HARGA BERSAHABAT";
+      document.getElementById("verifyDomainText").textContent = window.location.hostname || "Aplikasi Lokal / PWA";
+
+      const isHttps = window.location.protocol === "https:";
+      const protoEl = document.getElementById("verifyProtocolText");
+      protoEl.textContent = isHttps ? "HTTPS Terenkripsi (Aman)" : "Mode Lokal / Offline PWA";
+      protoEl.className = isHttps ? "text-success" : "text-primary";
+
+      document.getElementById("verifyOfficialWaText").textContent = "+" + (s.storePhone || "6281234567890").replace(/[^0-9]/g, "");
+      const banksSummary = (s.bankAccounts || []).map(b => `${b.bank} (${b.number})`).join(", ") || "QRIS Resmi Toko";
+      document.getElementById("verifyOfficialBanksText").textContent = banksSummary;
+
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalSecurityVerify")).show();
+    }
+
+    function getPublicAppUrl() {
+      return window.location.origin + window.location.pathname;
+    }
+
+    function openShareAppModal() {
+      const publicUrl = getPublicAppUrl();
+      const s = APP_DATA.settings;
+      document.getElementById("shareModalLogo").src = getActiveLogoSrc();
+      document.getElementById("shareModalStoreName").textContent = s.storeName || "BAKOEL HP";
+      document.getElementById("sharePublicUrlInput").value = publicUrl;
+
+      const qrImg = document.getElementById("shareAppQrImg");
+      qrImg.style.display = "block";
+      document.getElementById("shareQrOfflineFallback").classList.add("d-none");
+      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=6&data=${encodeURIComponent(publicUrl)}`;
+
+      const inviteMsg = encodeURIComponent(
+        `📱 *${s.storeName}* — _${s.storeTagline}_\n` +
+        `Beli • Jual • Tukar Tambah • Aksesoris\n` +
+        `✅ Harga & Stok Open • Bisa Nego Langsung\n` +
+        `✅ Jasa Kirim Toko • Bayar QRIS & Transfer\n\n` +
+        `👉 Buka & *Instal Aplikasinya* di HP Anda:\n${publicUrl}`
+      );
+      document.getElementById("btnShareAppWhatsapp").href = `https://wa.me/?text=${inviteMsg}`;
+
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalShareApp")).show();
+    }
+
+    function copyPublicShareLink() {
+      const url = document.getElementById("sharePublicUrlInput").value;
+      copyTextToClipboard(url, "Link Publik Toko");
+    }
+
+    function nativeShareAppLink() {
+      const url = document.getElementById("sharePublicUrlInput").value;
+      const s = APP_DATA.settings;
+      const text = `${s.storeName} - ${s.storeTagline}. Cek stok HP open harga, bisa nego, & instal aplikasinya di sini:`;
+      if (navigator.share) {
+        navigator.share({ title: s.storeName, text, url }).catch(() => {});
+      } else {
+        copyPublicShareLink();
+      }
+    }
+
+    /* =========================================================================
+       5. PREVIEW NOTA, PRINT THERMAL 58MM & SHARE NOTA VIA WA.ME
+       ========================================================================= */
+    function buildReceiptPlainText(t) {
+      const s = APP_DATA.settings;
+      const authCode = generateReceiptAuthCode(t);
+      const lines = [
+        `*NOTA TRANSAKSI RESMI*`,
+        `*${s.storeName}*`,
+        `${s.storeAddress}`,
+        `WA Toko: +${(s.storePhone || "").replace(/[^0-9]/g, "")}`,
+        `--------------------------------`,
+        `No. Invoice : *${t.invoiceNo}*`,
+        `Kode Asli   : *${authCode}*`,
+        `Tanggal     : ${formatDateShort(t.createdAt)}`,
+        `Pembeli     : ${t.buyerName}`,
+        `Status      : *${t.status.toUpperCase()}*`,
+        `--------------------------------`,
+        `Unit HP     : ${t.productName}`,
+        `Rincian     : ${t.qty} x ${formatRupiah(t.unitPrice)}`,
+        t.isNego ? `Harga Deal  : Harga Nego (${t.negoCode})` : `Harga Deal  : Harga Open Toko`,
+        `Jasa Kirim  : ${t.shippingName}`,
+        `Ongkos Kirim: ${t.shippingCost === 0 ? "Gratis (Rp 0)" : formatRupiah(t.shippingCost)}`,
+        `Pembayaran  : ${t.paymentMethod}`,
+        `--------------------------------`,
+        `*TOTAL BAYAR : ${formatRupiah(t.totalAmount)}*`,
+        `--------------------------------`,
+        `Segel Aman: ${s.securityPhrase || "BAKOEL HP ASLI"}`,
+        `Terima kasih telah berbelanja di ${s.storeName}!`
+      ];
+      return lines.join("\n");
+    }
+
+    function buildReceiptHtml(t, forPrint = false) {
+      const s = APP_DATA.settings;
+      const authCode = generateReceiptAuthCode(t);
+      const logoSrc = getActiveLogoSrc();
+
+      return `
+        <div style="text-align:center; margin-bottom:4px;">
+          <img src="${logoSrc}" onerror="this.style.display='none'" alt="Logo" style="width:${forPrint ? "38px" : "48px"}; height:${forPrint ? "38px" : "48px"}; object-fit:contain; border-radius:8px; margin-bottom:3px;" />
+          <div style="font-weight:bold; font-size:${forPrint ? "12px" : "14px"};">${escapeHtml(s.storeName)}</div>
+          <div style="font-size:10px;">${escapeHtml(s.storeTagline || "")}</div>
+          <div style="font-size:10px;">${escapeHtml(s.storeAddress)}</div>
+          <div style="font-size:10px;">WA: +${escapeHtml((s.storePhone || "").replace(/[^0-9]/g, ""))}</div>
+        </div>
+        <div class="receipt-divider" style="border-top:1px dashed #000; margin:5px 0;"></div>
+        <div>No Inv : <strong>${escapeHtml(t.invoiceNo)}</strong></div>
+        <div>Verif  : <strong>${authCode}</strong></div>
+        <div>Tgl    : ${formatDateShort(t.createdAt)}</div>
+        <div>Pembeli: ${escapeHtml(t.buyerName)}</div>
+        <div>WA     : ${escapeHtml(t.buyerWa)}</div>
+        <div>Status : <strong>${escapeHtml(t.status.toUpperCase())}</strong></div>
+        <div class="receipt-divider" style="border-top:1px dashed #000; margin:5px 0;"></div>
+        <div style="font-weight:bold;">${escapeHtml(t.productName)}</div>
+        <div style="display:flex; justify-content:space-between;">
+          <span>${t.qty} x ${formatRupiah(t.unitPrice)}</span>
+          <span>${formatRupiah(t.qty * t.unitPrice)}</span>
+        </div>
+        ${t.isNego ? `<div style="font-size:10px;">*Harga Nego (${escapeHtml(t.negoCode)})</div>` : ""}
+        <div style="margin-top:3px;">Kirim  : ${escapeHtml(t.shippingName)}</div>
+        <div style="display:flex; justify-content:space-between;">
+          <span>Ongkir</span>
+          <span>${t.shippingCost === 0 ? "Rp 0" : formatRupiah(t.shippingCost)}</span>
+        </div>
+        <div class="receipt-divider" style="border-top:1px dashed #000; margin:5px 0;"></div>
+        <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:${forPrint ? "12px" : "14px"};">
+          <span>TOTAL</span>
+          <span>${formatRupiah(t.totalAmount)}</span>
+        </div>
+        <div>Bayar  : ${escapeHtml(t.paymentMethod)}</div>
+        <div style="font-size:10px;">Alamat : ${escapeHtml(t.buyerAddress)}</div>
+        <div class="receipt-divider" style="border-top:1px dashed #000; margin:5px 0;"></div>
+        <div style="text-align:center; font-size:9px;">
+          <div>[SEGEL RESMI TERVERIFIKASI]</div>
+          <div>${escapeHtml(s.securityPhrase || "BAKOEL HP ASLI")}</div>
+          <div style="margin-top:3px;">Terima kasih telah berbelanja!</div>
+          <div>Powered by Ari GPM</div>
+        </div>
+      `;
+    }
+
+    function openReceiptPreviewModal(trxId) {
+      const t = APP_DATA.transactions.find(x => x.id === trxId);
+      if (!t) return;
+
+      document.getElementById("receiptPreviewPaper").innerHTML = buildReceiptHtml(t, false);
+
+      // Tombol Print 58mm
+      document.getElementById("btnPrintFromPreview").onclick = () => {
+        printThermalReceipt(t.id);
+      };
+
+      // Tombol Share / Salin Nota
+      const plainText = buildReceiptPlainText(t);
+      document.getElementById("btnShareGenericReceipt").onclick = () => {
+        if (navigator.share) {
+          navigator.share({ title: `Nota ${t.invoiceNo} - ${APP_DATA.settings.storeName}`, text: plainText }).catch(() => {});
+        } else {
+          copyTextToClipboard(plainText, "Teks Nota");
+        }
+      };
+
+      // Link langsung ke wa.me Pembeli (otomatis format nomor 08... -> 628...)
+      let cleanBuyerWa = (t.buyerWa || "").replace(/[^0-9]/g, "");
+      if (cleanBuyerWa.startsWith("0")) {
+        cleanBuyerWa = "62" + cleanBuyerWa.slice(1);
+      }
+      const waHref = cleanBuyerWa
+        ? `https://wa.me/${cleanBuyerWa}?text=${encodeURIComponent(plainText)}`
+        : `https://wa.me/?text=${encodeURIComponent(plainText)}`;
+
+      const waBtn = document.getElementById("btnShareWaBuyerReceipt");
+      waBtn.href = waHref;
+      waBtn.innerHTML = cleanBuyerWa
+        ? `<i class="bi bi-whatsapp me-1"></i>Kirim Nota ke WA ${escapeHtml(t.buyerName)} (wa.me)`
+        : `<i class="bi bi-whatsapp me-1"></i>Bagikan Nota via WhatsApp (wa.me)`;
+
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalReceiptPreview")).show();
+    }
+
+    function printThermalReceipt(trxId) {
+      const t = APP_DATA.transactions.find(x => x.id === trxId);
+      if (!t) return;
+      const area = document.getElementById("printableReceiptArea");
+      area.classList.remove("d-none");
+      area.innerHTML = buildReceiptHtml(t, true);
+      window.print();
+      setTimeout(() => area.classList.add("d-none"), 500);
+    }
+
+    /* =========================================================================
+       6. TEMA WARNA & IDENTITAS HEADER
+       ========================================================================= */
+    function applyTheme(themeName) {
+      const validThemes = ["ocean", "emerald", "indigo", "sunset", "dark"];
+      const chosen = validThemes.includes(themeName) ? themeName : "ocean";
+      document.documentElement.setAttribute("data-theme", chosen);
+      if (chosen === "dark") {
+        document.documentElement.setAttribute("data-bs-theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-bs-theme");
+      }
+      const themeColors = {
+        ocean: "#0284c7",
+        emerald: "#059669",
+        indigo: "#4f46e5",
+        sunset: "#ea580c",
+        dark: "#0f172a"
+      };
+      document.getElementById("metaThemeColor").setAttribute("content", themeColors[chosen]);
+
+      document.querySelectorAll(".theme-swatch").forEach(el => {
+        el.classList.toggle("active", el.getAttribute("data-theme-option") === chosen);
+      });
+
+      if (APP_DATA.settings.theme !== chosen) {
+        APP_DATA.settings.theme = chosen;
+        saveAppData(false);
+        showToast(`Tema diubah ke ${chosen.toUpperCase()}`);
+      }
+    }
+
+    function updateBadgesAndHeader() {
+      const s = APP_DATA.settings;
+      document.getElementById("headerStoreName").textContent = s.storeName || "BAKOEL HP";
+      document.getElementById("headerStoreSubtitle").textContent = s.storeTagline || "Smartphone Pilihan, Harga Bersahabat";
+      document.getElementById("headerStoreAddress").innerHTML = `<i class="bi bi-geo-alt-fill"></i> ${escapeHtml(s.storeAddress || "-")}`;
+
+      const logoEl = document.getElementById("headerLogo");
+      logoEl.onerror = function () {
+        this.onerror = null;
+        this.src = FALLBACK_MASCOT_SVG;
+      };
+      logoEl.src = getActiveLogoSrc();
+
+      document.getElementById("footerVersionTrigger").textContent = APP_VERSION;
+
+      if (APP_DATA.lastSync) {
+        const dt = new Date(APP_DATA.lastSync);
+        document.getElementById("lastSyncBadge").textContent = "Sync " + dt.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" });
+      }
+
+      // Customer badges
+      const activeNegos = APP_DATA.negos.filter(n => n.status === "approved" || n.status === "countered").length;
+      const custNegoBadge = document.getElementById("custNegoBadge");
+      custNegoBadge.textContent = activeNegos;
+      custNegoBadge.classList.toggle("d-none", activeNegos === 0);
+
+      const activeOrders = APP_DATA.transactions.filter(t => t.status !== "Selesai" && t.status !== "Dibatalkan").length;
+      const custTrxBadge = document.getElementById("custTrxBadge");
+      custTrxBadge.textContent = activeOrders;
+      custTrxBadge.classList.toggle("d-none", activeOrders === 0);
+
+      // Admin badges
+      const pendingNegos = APP_DATA.negos.filter(n => n.status === "pending").length;
+      const pendingOrders = APP_DATA.transactions.filter(t => t.status === "Menunggu Bayar" || t.status === "Diproses").length;
+      const totalAdminAlert = pendingNegos + pendingOrders;
+
+      const adminAlertBadge = document.getElementById("adminAlertBadge");
+      adminAlertBadge.textContent = totalAdminAlert;
+      adminAlertBadge.classList.toggle("d-none", totalAdminAlert === 0);
+
+      document.getElementById("badgeAdminNegoCount").textContent = pendingNegos;
+      document.getElementById("badgeAdminOrderCount").textContent = pendingOrders;
+    }
+
+    /* =========================================================================
+       7. NAVIGASI TAB PEMBELI & TAB PENJUAL (ADMIN)
+       ========================================================================= */
+    function switchCustomerTab(sectionId) {
+      document.querySelectorAll("#customerWorkspace .view-section").forEach(sec => sec.classList.add("d-none"));
+      document.getElementById(sectionId).classList.remove("d-none");
+
+      document.querySelectorAll("#customerBottomNav .nav-item-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-target") === sectionId);
+      });
+
+      if (sectionId === "secCustStore") renderCustomerCatalog();
+      if (sectionId === "secCustNego") renderCustomerNegos();
+      if (sectionId === "secCustTransactions") renderCustomerTransactions();
+    }
+
+    function switchAdminTab(sectionId) {
+      document.querySelectorAll("#adminWorkspace .admin-section").forEach(sec => sec.classList.add("d-none"));
+      document.getElementById(sectionId).classList.remove("d-none");
+
+      document.querySelectorAll("#adminBottomNav .nav-item-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-target") === sectionId);
+      });
+
+      if (sectionId === "secAdminReports") renderAdminReports();
+      if (sectionId === "secAdminProducts") renderAdminProducts();
+      if (sectionId === "secAdminOrders") renderAdminOrdersAndNegos();
+      if (sectionId === "secAdminSettings") populateSettingsForm();
+    }
+
+    /* =========================================================================
+       8. AKSES LOGIN ADMIN VIA VERSI & "POWERED BY ARI GPM" + IDLE AUTO-LOCK
+       ========================================================================= */
+    function setupSecretAdminTriggers() {
+      const triggers = [
+        document.getElementById("footerVersionTrigger"),
+        document.getElementById("footerBrandTrigger")
+      ];
+      let lastTapTime = 0;
+
+      triggers.forEach(el => {
+        if (!el) return;
+        el.addEventListener("dblclick", () => {
+          openAdminLoginOrSwitch();
+        });
+        el.addEventListener("touchend", (e) => {
+          const now = Date.now();
+          if (now - lastTapTime < 420) {
+            e.preventDefault();
+            openAdminLoginOrSwitch();
+          }
+          lastTapTime = now;
+        });
+      });
+
+      // Reset timer auto-lock jika penjual sedang aktif berinteraksi
+      ["click", "touchstart", "keydown"].forEach(evt => {
+        document.addEventListener(evt, () => {
+          if (isAdminLoggedIn) resetAdminIdleTimer();
+        }, { passive: true });
+      });
+    }
+
+    function resetAdminIdleTimer() {
+      clearTimeout(adminIdleTimer);
+      adminIdleTimer = setTimeout(() => {
+        if (isAdminLoggedIn) {
+          forceAdminLogout("Sesi penjual dikunci otomatis setelah 2 menit tidak aktif.");
+        }
+      }, ADMIN_IDLE_TIMEOUT_MS);
+    }
+
+    function openAdminLoginOrSwitch() {
+      if (isAdminLoggedIn) {
+        showToast("Anda sudah berada di Mode Penjual.");
+        return;
+      }
+      document.getElementById("loginSecurityMascotImg").src = getActiveLogoSrc();
+      document.getElementById("loginSecurityPhrase").textContent = APP_DATA.settings.securityPhrase || "BAKOEL HP ASLI";
+      document.getElementById("adminPinInput").value = "";
+      document.getElementById("adminLoginError").classList.add("d-none");
+      togglePinRecoveryBox(false);
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalAdminLogin")).show();
+      setTimeout(() => document.getElementById("adminPinInput").focus(), 350);
+    }
+
+    function verifyAdminPin() {
+      const inputPin = document.getElementById("adminPinInput").value.trim();
+      const savedPin = APP_DATA.settings.adminPin || "123456";
+      if (inputPin === savedPin) {
+        bootstrap.Modal.getInstance(document.getElementById("modalAdminLogin")).hide();
+        enterAdminMode();
+        showToast("Berhasil masuk ke Menu Penjual!");
+      } else {
+        document.getElementById("adminLoginError").classList.remove("d-none");
+      }
+    }
+
+    function togglePinRecoveryBox(showRecovery) {
+      document.getElementById("adminPinLoginBox").classList.toggle("d-none", showRecovery);
+      document.getElementById("adminPinRecoveryBox").classList.toggle("d-none", !showRecovery);
+      if (showRecovery) {
+        document.getElementById("recoveryQuestionText").textContent = APP_DATA.settings.securityQuestion || "Nama konter pertama kita?";
+        document.getElementById("recoveryAnswerInput").value = "";
+        document.getElementById("recoveryNewPinInput").value = "";
+        document.getElementById("recoveryErrorText").classList.add("d-none");
+      }
+    }
+
+    function processPinRecovery() {
+      const ans = document.getElementById("recoveryAnswerInput").value.trim().toLowerCase();
+      const expected = (APP_DATA.settings.securityAnswer || "prisma").trim().toLowerCase();
+      const newPin = document.getElementById("recoveryNewPinInput").value.trim();
+
+      if (ans === expected && /^\d{6}$/.test(newPin)) {
+        APP_DATA.settings.adminPin = newPin;
+        saveAppData();
+        bootstrap.Modal.getInstance(document.getElementById("modalAdminLogin")).hide();
+        enterAdminMode();
+        showToast("PIN berhasil direset & masuk ke Menu Penjual!");
+      } else {
+        document.getElementById("recoveryErrorText").classList.remove("d-none");
+      }
+    }
+
+    function enterAdminMode() {
+      isAdminLoggedIn = true;
+      resetAdminIdleTimer();
+      document.getElementById("adminModeBadge").classList.remove("d-none");
+      document.getElementById("customerWorkspace").classList.add("d-none");
+      document.getElementById("customerBottomNav").classList.add("d-none");
+      document.getElementById("adminWorkspace").classList.remove("d-none");
+      document.getElementById("adminBottomNav").classList.remove("d-none");
+      switchAdminTab("secAdminReports");
+    }
+
+    function forceAdminLogout(toastMsg) {
+      clearTimeout(adminIdleTimer);
+      isAdminLoggedIn = false;
+      document.getElementById("adminModeBadge").classList.add("d-none");
+      document.getElementById("adminWorkspace").classList.add("d-none");
+      document.getElementById("adminBottomNav").classList.add("d-none");
+      document.getElementById("customerWorkspace").classList.remove("d-none");
+      document.getElementById("customerBottomNav").classList.remove("d-none");
+      switchCustomerTab("secCustStore");
+      showToast(toastMsg || "Kembali ke tampilan Toko Pembeli.");
+    }
+
+    function confirmAdminLogout() {
+      showConfirmModal(
+        "Keluar Menu Penjual",
+        "Kembali ke tampilan Toko Pembeli? Anda dapat masuk lagi kapan saja dengan klik 2x pada nomor versi.",
+        "Ya, Keluar",
+        "btn-danger",
+        () => forceAdminLogout("Kembali ke tampilan Toko Pembeli.")
+      );
+    }
+
+    /* =========================================================================
+       9. FITUR PEMBELI: KATALOG OPEN HARGA & STOK, NEGO, CHECKOUT, PEMBAYARAN
+       ========================================================================= */
+    function renderCustomerCatalog() {
+      const query = (document.getElementById("custSearchInput").value || "").toLowerCase();
+      const sortBy = document.getElementById("custSortSelect").value;
+
+      const brands = ["Semua", ...new Set(APP_DATA.products.map(p => p.brand).filter(Boolean))];
+      const chipWrap = document.getElementById("brandFilterChips");
+      chipWrap.innerHTML = brands.map(b => `
+        <button type="button" class="filter-chip ${selectedBrandFilter === b ? "active" : ""}" onclick="selectBrandFilter('${escapeHtml(b)}')">
+          ${escapeHtml(b)}
+        </button>
+      `).join("");
+
+      let list = APP_DATA.products.filter(p => {
+        const matchBrand = selectedBrandFilter === "Semua" || p.brand === selectedBrandFilter;
+        const matchText = !query ||
+          (p.name || "").toLowerCase().includes(query) ||
+          (p.variant || "").toLowerCase().includes(query) ||
+          (p.condition || "").toLowerCase().includes(query) ||
+          (p.description || "").toLowerCase().includes(query);
+        return matchBrand && matchText;
+      });
+
+      if (sortBy === "price_asc") list.sort((a, b) => a.openPrice - b.openPrice);
+      else if (sortBy === "price_desc") list.sort((a, b) => b.openPrice - a.openPrice);
+      else if (sortBy === "stock_desc") list.sort((a, b) => b.stock - a.stock);
+
+      const grid = document.getElementById("customerProductGrid");
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div class="col-12">
+            <div class="app-card p-4 text-center text-muted">
+              <i class="bi bi-phone fs-1 opacity-50"></i>
+              <p class="mb-0 mt-2 small">Belum ada unit HP yang cocok dengan pencarian Anda.</p>
+            </div>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = list.map(p => {
+        const inStock = Number(p.stock) > 0;
+        const stockBadge = inStock
+          ? `<span class="stock-badge bg-success text-white">Stok: ${p.stock}</span>`
+          : `<span class="stock-badge bg-danger text-white">Stok Habis</span>`;
+        const imgSrc = p.image || createPhoneIllustration(p.brand || "HP", "e0f2fe");
+
+        return `
+          <div class="col-6">
+            <div class="app-card product-card">
+              <div class="product-thumb-wrap" onclick="openProductDetail('${p.id}')">
+                <img src="${imgSrc}" class="product-thumb" alt="${escapeHtml(p.name)}" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" />
+                ${stockBadge}
+                <span class="brand-badge">${escapeHtml(p.brand || "Unit")}</span>
+              </div>
+              <div class="p-2 d-flex flex-column flex-grow-1">
+                <div class="fw-bold text-truncate" style="font-size:0.86rem; cursor:pointer;" onclick="openProductDetail('${p.id}')">
+                  ${escapeHtml(p.name)}
+                </div>
+                <div class="text-muted text-truncate" style="font-size:0.72rem;">${escapeHtml(p.variant || "")}</div>
+                <div class="text-muted text-truncate mb-1" style="font-size:0.7rem;">
+                  <i class="bi bi-stars text-warning"></i> ${escapeHtml(p.condition || "")}
+                </div>
+                <div class="mt-auto pt-1">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <span class="text-muted" style="font-size:0.66rem;">Harga Open</span>
+                    <span class="badge bg-theme-soft" style="font-size:0.62rem;">Bisa Nego</span>
+                  </div>
+                  <div class="price-open mb-2">${formatRupiah(p.openPrice)}</div>
+                  <div class="d-flex gap-1">
+                    <button type="button" class="btn btn-sm btn-theme-soft flex-fill py-1" style="font-size:0.75rem;" ${!inStock ? "disabled" : ""} onclick="openNegoModal('${p.id}')">
+                      <i class="bi bi-tags"></i> Nego
+                    </button>
+                    <button type="button" class="btn btn-sm btn-theme flex-fill py-1" style="font-size:0.75rem;" ${!inStock ? "disabled" : ""} onclick="openCheckoutModal('${p.id}', null)">
+                      <i class="bi bi-bag"></i> Beli
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+      }).join("");
+    }
+
+    function selectBrandFilter(brand) {
+      selectedBrandFilter = brand;
+      renderCustomerCatalog();
+    }
+
+    function openProductDetail(productId) {
+      const p = APP_DATA.products.find(item => item.id === productId);
+      if (!p) return;
+      const inStock = Number(p.stock) > 0;
+      const imgSrc = p.image || createPhoneIllustration(p.brand || "HP", "e0f2fe");
+
+      document.getElementById("detailProdTitle").textContent = p.name;
+      document.getElementById("detailProdBody").innerHTML = `
+        <div class="rounded-3 overflow-hidden mb-3 bg-dark text-center" style="max-height:280px;">
+          <img src="${imgSrc}" alt="${escapeHtml(p.name)}" style="width:100%; max-height:280px; object-fit:contain;" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" />
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="badge ${inStock ? "bg-success" : "bg-danger"}">${inStock ? "Stok Tersedia: " + p.stock + " Unit" : "Stok Habis"}</span>
+          <span class="badge bg-theme-soft">${escapeHtml(p.brand)} • ${escapeHtml(p.variant)}</span>
+        </div>
+        <div class="p-2 rounded-3 bg-theme-soft d-flex justify-content-between align-items-center mb-2">
+          <span class="small fw-semibold">Harga Open Toko:</span>
+          <span class="fw-bold fs-5 text-theme">${formatRupiah(p.openPrice)}</span>
+        </div>
+        <div class="small mb-2"><strong>Kondisi:</strong> ${escapeHtml(p.condition)}</div>
+        <div class="small text-muted mb-3">${escapeHtml(p.description || "Tidak ada catatan tambahan.")}</div>
+        <div class="border-top pt-2 small">
+          <div class="fw-bold mb-1"><i class="bi bi-truck text-theme me-1"></i>Jasa Kirim Toko Tersedia:</div>
+          <ul class="mb-0 ps-3 text-muted" style="font-size:0.76rem;">
+            ${APP_DATA.settings.shippingMethods.map(s => `<li>${escapeHtml(s.name)} (${s.cost === 0 ? "Gratis" : formatRupiah(s.cost)})</li>`).join("")}
+          </ul>
+        </div>
+      `;
+
+      document.getElementById("detailProdFooter").innerHTML = inStock ? `
+        <button type="button" class="btn btn-sm btn-theme-soft flex-fill" data-bs-dismiss="modal" onclick="openNegoModal('${p.id}')">
+          <i class="bi bi-tags me-1"></i>Ajukan Nego
+        </button>
+        <button type="button" class="btn btn-sm btn-theme flex-fill" data-bs-dismiss="modal" onclick="openCheckoutModal('${p.id}', null)">
+          <i class="bi bi-bag-check me-1"></i>Beli Harga Open
+        </button>
+      ` : `<button type="button" class="btn btn-sm btn-secondary w-100" data-bs-dismiss="modal">Stok Sedang Kosong</button>`;
+
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalProductDetail")).show();
+    }
+
+    /* --- NEGO HARGA (PEMBELI) --- */
+    function openNegoModal(preselectedProductId) {
+      const available = APP_DATA.products.filter(p => Number(p.stock) > 0);
+      if (available.length === 0) {
+        showToast("Maaf, stok unit HP sedang kosong.");
+        return;
+      }
+      const select = document.getElementById("negoProductId");
+      select.innerHTML = available.map(p => `
+        <option value="${p.id}" ${p.id === preselectedProductId ? "selected" : ""}>
+          ${escapeHtml(p.name)} (Stok: ${p.stock} | Open: ${formatRupiah(p.openPrice)})
+        </option>
+      `).join("");
+
+      document.getElementById("negoQty").value = 1;
+      document.getElementById("negoNote").value = "";
+      onNegoProductChange();
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalNego")).show();
+    }
+
+    function onNegoProductChange() {
+      const pid = document.getElementById("negoProductId").value;
+      const p = APP_DATA.products.find(x => x.id === pid);
+      if (!p) return;
+      document.getElementById("negoOpenPriceDisplay").textContent = formatRupiah(p.openPrice);
+      document.getElementById("negoQty").max = p.stock;
+      document.getElementById("negoOfferPrice").value = Math.max(10000, p.openPrice - 150000);
+    }
+
+    function submitCustomerNego(e) {
+      e.preventDefault();
+      const pid = document.getElementById("negoProductId").value;
+      const p = APP_DATA.products.find(x => x.id === pid);
+      if (!p) return;
+
+      const qty = Math.min(Number(document.getElementById("negoQty").value) || 1, Number(p.stock));
+      const offerPrice = Number(document.getElementById("negoOfferPrice").value) || 0;
+      const buyerName = document.getElementById("negoBuyerName").value.trim();
+      const buyerWa = document.getElementById("negoBuyerWa").value.trim();
+      const note = document.getElementById("negoNote").value.trim();
+
+      const code = "NGO-" + Date.now().toString().slice(-6);
+      const newNego = {
+        id: "NEGO-" + Date.now(),
+        code,
+        productId: p.id,
+        productName: p.name,
+        openPrice: p.openPrice,
+        offerPrice,
+        counterPrice: 0,
+        qty,
+        buyerName,
+        buyerWa,
+        note,
+        status: "pending",
+        adminNote: "",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+
+      APP_DATA.negos.unshift(newNego);
+      saveAppData();
+
+      bootstrap.Modal.getInstance(document.getElementById("modalNego")).hide();
+      switchCustomerTab("secCustNego");
+      showToast(`Penawaran ${code} berhasil dikirim ke penjual!`);
+    }
+
+    function renderCustomerNegos() {
+      const q = (document.getElementById("custNegoSearch").value || "").toLowerCase();
+      const list = APP_DATA.negos.filter(n =>
+        !q ||
+        (n.code || "").toLowerCase().includes(q) ||
+        (n.productName || "").toLowerCase().includes(q) ||
+        (n.buyerName || "").toLowerCase().includes(q) ||
+        (n.buyerWa || "").toLowerCase().includes(q)
+      );
+
+      const container = document.getElementById("customerNegoList");
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="app-card p-4 text-center text-muted">
+            <i class="bi bi-chat-square-quote fs-1 opacity-50"></i>
+            <p class="small mt-2 mb-2">Belum ada riwayat penawaran nego.</p>
+            <button type="button" class="btn btn-sm btn-theme" onclick="openNegoModal()">Ajukan Nego Sekarang</button>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = list.map(n => {
+        let badgeHtml = `<span class="badge bg-warning text-dark">Menunggu Respon Penjual</span>`;
+        let actionHtml = "";
+
+        if (n.status === "approved") {
+          badgeHtml = `<span class="badge bg-success">Nego Disetujui!</span>`;
+          actionHtml = `
+            <button type="button" class="btn btn-sm btn-success w-100 mt-2 fw-bold" onclick="openCheckoutModal('${n.productId}', '${n.code}')">
+              <i class="bi bi-bag-check me-1"></i>Checkout Harga Nego (${formatRupiah(n.offerPrice)})
+            </button>`;
+        } else if (n.status === "countered") {
+          badgeHtml = `<span class="badge bg-info text-dark">Penawaran Balik Penjual</span>`;
+          actionHtml = `
+            <div class="p-2 rounded bg-info bg-opacity-10 mt-2 small">
+              <strong>Tawaran Penjual: ${formatRupiah(n.counterPrice)} / unit</strong>
+              ${n.adminNote ? `<div class="text-muted">${escapeHtml(n.adminNote)}</div>` : ""}
+              <button type="button" class="btn btn-sm btn-theme w-100 mt-2" onclick="openCheckoutModal('${n.productId}', '${n.code}')">
+                <i class="bi bi-check2-circle me-1"></i>Setuju &amp; Checkout (${formatRupiah(n.counterPrice)})
+              </button>
+            </div>`;
+        } else if (n.status === "rejected") {
+          badgeHtml = `<span class="badge bg-danger">Nego Ditolak</span>`;
+        } else if (n.status === "used") {
+          badgeHtml = `<span class="badge bg-secondary">Sudah Di-Checkout</span>`;
+        }
+
+        return `
+          <div class="app-card p-3">
+            <div class="d-flex justify-content-between align-items-start mb-1">
+              <div>
+                <span class="fw-bold text-theme small">${escapeHtml(n.code)}</span>
+                <div class="fw-bold">${escapeHtml(n.productName)} (${n.qty} unit)</div>
+              </div>
+              ${badgeHtml}
+            </div>
+            <div class="d-flex justify-content-between small text-muted mt-1">
+              <span>Harga Open: <del>${formatRupiah(n.openPrice)}</del></span>
+              <span class="fw-bold text-body">Tawaran Anda: ${formatRupiah(n.offerPrice)}</span>
+            </div>
+            <div class="small text-muted mt-1">
+              <i class="bi bi-person me-1"></i>${escapeHtml(n.buyerName)} (${escapeHtml(n.buyerWa)})
+            </div>
+            ${n.note ? `<div class="small text-muted fst-italic mt-1">"${escapeHtml(n.note)}"</div>` : ""}
+            ${n.adminNote && n.status !== "countered" ? `<div class="small text-primary mt-1"><i class="bi bi-reply-fill me-1"></i>Penjual: ${escapeHtml(n.adminNote)}</div>` : ""}
+            ${actionHtml}
+          </div>`;
+      }).join("");
+    }
+
+    /* --- CHECKOUT & PEMBAYARAN (QRIS / TRANSFER + JASA KIRIM TOKO) --- */
+    function openCheckoutModal(productId, negoCode) {
+      const p = APP_DATA.products.find(item => item.id === productId);
+      if (!p || Number(p.stock) <= 0) {
+        showToast("Stok unit HP ini sudah habis.");
+        return;
+      }
+
+      let unitPrice = Number(p.openPrice);
+      let qty = 1;
+      let buyerName = "";
+      let buyerWa = "";
+      let isNego = false;
+
+      if (negoCode) {
+        const n = APP_DATA.negos.find(item => item.code === negoCode);
+        if (n && (n.status === "approved" || n.status === "countered")) {
+          isNego = true;
+          unitPrice = n.status === "countered" ? Number(n.counterPrice) : Number(n.offerPrice);
+          qty = Math.min(Number(n.qty) || 1, Number(p.stock));
+          buyerName = n.buyerName || "";
+          buyerWa = n.buyerWa || "";
+        }
+      }
+
+      document.getElementById("chkProductId").value = p.id;
+      document.getElementById("chkNegoCode").value = isNego ? negoCode : "";
+      document.getElementById("chkUnitPrice").value = unitPrice;
+      document.getElementById("chkProdName").textContent = p.name + " (" + (p.variant || "") + ")";
+      document.getElementById("chkUnitPriceText").textContent = formatRupiah(unitPrice);
+
+      const badge = document.getElementById("chkPriceTypeBadge");
+      badge.textContent = isNego ? `Harga Nego (${negoCode})` : "Harga Open Toko";
+      badge.className = "badge mt-1 " + (isNego ? "bg-success" : "bg-primary");
+
+      const qtyInput = document.getElementById("chkQty");
+      qtyInput.value = qty;
+      qtyInput.max = p.stock;
+
+      document.getElementById("chkBuyerName").value = buyerName;
+      document.getElementById("chkBuyerWa").value = buyerWa;
+      document.getElementById("chkBuyerAddress").value = "";
+
+      const shipSelect = document.getElementById("chkShippingSelect");
+      shipSelect.innerHTML = APP_DATA.settings.shippingMethods.map(s => `
+        <option value="${s.id}" data-cost="${s.cost}">
+          ${escapeHtml(s.name)} (${s.cost === 0 ? "Gratis" : formatRupiah(s.cost)})
+        </option>
+      `).join("");
+
+      const bankSelect = document.getElementById("chkBankSelect");
+      bankSelect.innerHTML = APP_DATA.settings.bankAccounts.map(b => `
+        <option value="${escapeHtml(b.bank)} - ${escapeHtml(b.number)} a.n ${escapeHtml(b.holder)}">
+          ${escapeHtml(b.bank)} - ${escapeHtml(b.number)} (${escapeHtml(b.holder)})
+        </option>
+      `).join("");
+
+      document.getElementById("payQris").checked = true;
+      toggleCheckoutPaymentBox();
+      recalcCheckoutTotal();
+
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalCheckout")).show();
+    }
+
+    function toggleCheckoutPaymentBox() {
+      const isTransfer = document.getElementById("payTransfer").checked;
+      document.getElementById("chkBankSelectWrap").classList.toggle("d-none", !isTransfer);
+    }
+
+    function recalcCheckoutTotal() {
+      const unitPrice = Number(document.getElementById("chkUnitPrice").value) || 0;
+      const qty = Math.max(1, Number(document.getElementById("chkQty").value) || 1);
+      const shipSelect = document.getElementById("chkShippingSelect");
+      const selectedOpt = shipSelect.options[shipSelect.selectedIndex];
+      const shipCost = selectedOpt ? Number(selectedOpt.getAttribute("data-cost")) || 0 : 0;
+
+      const subtotal = unitPrice * qty;
+      const grandTotal = subtotal + shipCost;
+
+      document.getElementById("chkSubtotalText").textContent = formatRupiah(subtotal);
+      document.getElementById("chkShippingCostText").textContent = shipCost === 0 ? "Gratis (Rp 0)" : formatRupiah(shipCost);
+      document.getElementById("chkGrandTotalText").textContent = formatRupiah(grandTotal);
+    }
+
+    function submitCustomerOrder(e) {
+      e.preventDefault();
+      const pid = document.getElementById("chkProductId").value;
+      const p = APP_DATA.products.find(x => x.id === pid);
+      if (!p || Number(p.stock) <= 0) {
+        showToast("Stok produk tidak mencukupi.");
+        return;
+      }
+
+      const qty = Math.min(Math.max(1, Number(document.getElementById("chkQty").value) || 1), Number(p.stock));
+      const unitPrice = Number(document.getElementById("chkUnitPrice").value) || Number(p.openPrice);
+      const negoCode = document.getElementById("chkNegoCode").value;
+
+      const shipId = document.getElementById("chkShippingSelect").value;
+      const shipObj = APP_DATA.settings.shippingMethods.find(s => s.id === shipId) || { id: "s1", name: "Ambil di Toko", cost: 0 };
+
+      const paymentMethod = document.getElementById("payTransfer").checked ? "TRANSFER" : "QRIS";
+      const paymentDetail = paymentMethod === "TRANSFER"
+        ? document.getElementById("chkBankSelect").value
+        : (APP_DATA.settings.qrisNmid || "QRIS Toko");
+
+      const buyerName = document.getElementById("chkBuyerName").value.trim();
+      const buyerWa = document.getElementById("chkBuyerWa").value.trim();
+      const buyerAddress = document.getElementById("chkBuyerAddress").value.trim();
+      const totalAmount = (unitPrice * qty) + Number(shipObj.cost || 0);
+
+      const invoiceNo = "INV-" + Date.now().toString().slice(-6);
+      const newTrx = {
+        id: "TRX-" + Date.now(),
+        invoiceNo,
+        productId: p.id,
+        productName: p.name,
+        qty,
+        unitPrice,
+        costPrice: Number(p.costPrice) || 0,
+        isNego: Boolean(negoCode),
+        negoCode: negoCode || "",
+        shippingId: shipObj.id,
+        shippingName: shipObj.name,
+        shippingCost: Number(shipObj.cost) || 0,
+        totalAmount,
+        paymentMethod,
+        paymentDetail,
+        buyerName,
+        buyerWa,
+        buyerAddress,
+        status: "Menunggu Bayar",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      };
+
+      p.stock = Math.max(0, Number(p.stock) - qty);
+      p.updatedAt = new Date().toISOString();
+
+      if (negoCode) {
+        const negoItem = APP_DATA.negos.find(n => n.code === negoCode);
+        if (negoItem) {
+          negoItem.status = "used";
+          negoItem.updatedAt = new Date().toISOString();
+        }
+      }
+
+      APP_DATA.transactions.unshift(newTrx);
+      saveAppData();
+
+      bootstrap.Modal.getInstance(document.getElementById("modalCheckout")).hide();
+      switchCustomerTab("secCustTransactions");
+      openPaymentInstructionModal(newTrx.id);
+    }
+
+    function openPaymentInstructionModal(trxId) {
+      const t = APP_DATA.transactions.find(x => x.id === trxId);
+      if (!t) return;
+
+      document.getElementById("payModalTitle").textContent = `Pembayaran ${t.invoiceNo}`;
+      const storeWa = (APP_DATA.settings.storePhone || "6281234567890").replace(/[^0-9]/g, "");
+      const waMsg = encodeURIComponent(
+        `Halo ${APP_DATA.settings.storeName}, saya ingin konfirmasi pembayaran pesanan:\n` +
+        `• Invoice: ${t.invoiceNo}\n` +
+        `• Unit: ${t.productName} (${t.qty}x)\n` +
+        `• Kirim: ${t.shippingName}\n` +
+        `• Metode: ${t.paymentMethod}\n` +
+        `• Total: ${formatRupiah(t.totalAmount)}\n` +
+        `• Nama: ${t.buyerName}`
+      );
+
+      let paymentVisualHtml = "";
+      if (t.paymentMethod === "QRIS") {
+        const qrisImg = APP_DATA.settings.qrisImage;
+        paymentVisualHtml = `
+          <div class="text-center p-3 rounded-4 border mb-2 bg-white text-dark">
+            <div class="fw-bold small mb-1">SCAN QRIS PEMBAYARAN RESMI</div>
+            <div class="text-muted mb-2" style="font-size:0.7rem;">${escapeHtml(APP_DATA.settings.qrisNmid || APP_DATA.settings.storeName)}</div>
+            ${qrisImg
+              ? `<img src="${qrisImg}" alt="QRIS Toko" style="max-width:200px; border-radius:10px;" />`
+              : `<div class="p-3 border rounded-3 d-inline-block bg-light">
+                   <i class="bi bi-qr-code" style="font-size: 110px; line-height:1; color:#0f172a;"></i>
+                   <div class="fw-bold mt-1" style="font-size:0.72rem;">QRIS ${escapeHtml(APP_DATA.settings.storeName)}</div>
+                 </div>`
+            }
+            <div class="mt-2 small text-muted">Mendukung GoPay, OVO, DANA, ShopeePay, BCA Mobile, BRI, Mandiri</div>
+          </div>`;
+      } else {
+        paymentVisualHtml = `
+          <div class="p-3 rounded-4 bg-theme-soft mb-2">
+            <div class="small fw-bold mb-1"><i class="bi bi-bank me-1"></i>Transfer Bank / E-Wallet Resmi:</div>
+            <div class="fw-bold">${escapeHtml(t.paymentDetail)}</div>
+            <button type="button" class="btn btn-sm btn-theme mt-2" onclick="copyTextToClipboard('${escapeHtml(t.paymentDetail)}', 'Rekening')">
+              <i class="bi bi-clipboard me-1"></i>Salin Info Rekening
+            </button>
+          </div>`;
+      }
+
+      document.getElementById("payModalBody").innerHTML = `
+        <!-- Segel Identitas Pengamanan Anti-Phishing -->
+        <div class="security-seal-box d-flex align-items-center gap-2 mb-2">
+          <img src="${getActiveLogoSrc()}" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" alt="Segel Keamanan" class="security-seal-avatar" />
+          <div style="font-size:0.7rem; line-height:1.25;">
+            <div class="fw-bold text-success"><i class="bi bi-patch-check-fill me-1"></i>Identitas Resmi Terverifikasi</div>
+            <div class="text-muted">${escapeHtml(APP_DATA.settings.securityPhrase || "BAKOEL HP ASLI")}</div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center p-2 rounded-3 border mb-2">
+          <div>
+            <div class="small text-muted">Total Tagihan</div>
+            <div class="fw-bold fs-5 text-theme">${formatRupiah(t.totalAmount)}</div>
+          </div>
+          <button type="button" class="btn btn-sm btn-theme-soft" onclick="copyTextToClipboard('${t.totalAmount}', 'Nominal')">
+            <i class="bi bi-copy me-1"></i>Salin Nominal
+          </button>
+        </div>
+        ${paymentVisualHtml}
+        <div class="small text-muted">
+          <div><strong>Unit:</strong> ${escapeHtml(t.productName)} (${t.qty}x)</div>
+          <div><strong>Jasa Kirim:</strong> ${escapeHtml(t.shippingName)} (${formatRupiah(t.shippingCost)})</div>
+          <div><strong>Alamat:</strong> ${escapeHtml(t.buyerAddress)}</div>
+        </div>
+      `;
+
+      document.getElementById("payModalFooter").innerHTML = `
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal" onclick="openReceiptPreviewModal('${t.id}')">
+          <i class="bi bi-receipt me-1"></i>Preview Nota
+        </button>
+        <a href="https://wa.me/${storeWa}?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-success flex-grow-1 fw-bold">
+          <i class="bi bi-whatsapp me-1"></i>Kirim Bukti Bayar ke WA
+        </a>
+      `;
+
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalPaymentInfo")).show();
+    }
+
+    function renderCustomerTransactions() {
+      const q = (document.getElementById("custTrxSearch").value || "").toLowerCase();
+      const list = APP_DATA.transactions.filter(t =>
+        !q ||
+        (t.invoiceNo || "").toLowerCase().includes(q) ||
+        (t.productName || "").toLowerCase().includes(q) ||
+        (t.buyerName || "").toLowerCase().includes(q) ||
+        (t.buyerWa || "").toLowerCase().includes(q)
+      );
+
+      const container = document.getElementById("customerTransactionList");
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="app-card p-4 text-center text-muted">
+            <i class="bi bi-receipt fs-1 opacity-50"></i>
+            <p class="small mt-2 mb-2">Belum ada transaksi pembelian.</p>
+            <button type="button" class="btn btn-sm btn-theme" onclick="switchCustomerTab('secCustStore')">Lihat Katalog HP</button>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = list.map(t => {
+        const statusColors = {
+          "Menunggu Bayar": "bg-warning text-dark",
+          "Diproses": "bg-info text-dark",
+          "Dikirim": "bg-primary",
+          "Selesai": "bg-success",
+          "Dibatalkan": "bg-danger"
+        };
+        const badgeClass = statusColors[t.status] || "bg-secondary";
+
+        return `
+          <div class="app-card p-3">
+            <div class="d-flex justify-content-between align-items-start mb-1">
+              <div>
+                <span class="fw-bold text-theme small">${escapeHtml(t.invoiceNo)}</span>
+                <span class="text-muted ms-1" style="font-size:0.7rem;">${formatDateShort(t.createdAt)}</span>
+                <div class="fw-bold">${escapeHtml(t.productName)} (${t.qty}x)</div>
+              </div>
+              <span class="badge ${badgeClass}">${escapeHtml(t.status)}</span>
+            </div>
+            <div class="small text-muted">
+              <i class="bi bi-truck me-1"></i>${escapeHtml(t.shippingName)} •
+              <i class="bi bi-wallet2 ms-1 me-1"></i>${escapeHtml(t.paymentMethod)}
+              ${t.isNego ? `<span class="badge bg-success bg-opacity-10 text-success ms-1">Harga Nego</span>` : ""}
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-2 pt-2 border-top">
+              <div>
+                <span class="text-muted small">Total:</span>
+                <span class="fw-bold text-theme ms-1">${formatRupiah(t.totalAmount)}</span>
+              </div>
+              <div class="d-flex gap-1">
+                <button type="button" class="btn btn-sm btn-outline-secondary py-1 px-2" style="font-size:0.74rem;" onclick="openReceiptPreviewModal('${t.id}')">
+                  <i class="bi bi-receipt"></i> Nota
+                </button>
+                <button type="button" class="btn btn-sm btn-theme py-1 px-2" style="font-size:0.74rem;" onclick="openPaymentInstructionModal('${t.id}')">
+                  <i class="bi bi-qr-code me-1"></i>Bayar
+                </button>
+              </div>
+            </div>
+          </div>`;
+      }).join("");
+    }
+
+    /* =========================================================================
+       10. FITUR ADMIN / PENJUAL: LAPORAN PENJUALAN, PRODUK (GALERI HP), NEGO, ORDER
+       ========================================================================= */
+    function renderAdminReports() {
+      const periodEl = document.querySelector('input[name="reportPeriod"]:checked');
+      const period = periodEl ? periodEl.value : "month";
+      const now = new Date();
+
+      const validOrders = APP_DATA.transactions.filter(t => {
+        if (t.status === "Dibatalkan") return false;
+        const dt = new Date(t.createdAt);
+        if (period === "today") {
+          return dt.toDateString() === now.toDateString();
+        }
+        if (period === "month") {
+          return dt.getMonth() === now.getMonth() && dt.getFullYear() === now.getFullYear();
+        }
+        return true;
+      });
+
+      let totalOmzet = 0;
+      let totalOngkir = 0;
+      let totalProfit = 0;
+      let totalUnits = 0;
+      const payMap = { QRIS: 0, TRANSFER: 0 };
+      const shipMap = {};
+
+      validOrders.forEach(t => {
+        const unitRevenue = Number(t.unitPrice) * Number(t.qty);
+        const unitCost = (Number(t.costPrice) || 0) * Number(t.qty);
+        totalOmzet += Number(t.totalAmount);
+        totalOngkir += Number(t.shippingCost) || 0;
+        totalProfit += (unitRevenue - unitCost);
+        totalUnits += Number(t.qty);
+
+        const pm = t.paymentMethod === "TRANSFER" ? "TRANSFER" : "QRIS";
+        payMap[pm] = (payMap[pm] || 0) + Number(t.totalAmount);
+
+        const sn = t.shippingName || "Ambil di Toko";
+        shipMap[sn] = (shipMap[sn] || 0) + 1;
+      });
+
+      const marginPct = totalOmzet > 0 ? Math.round((totalProfit / totalOmzet) * 100) : 0;
+      const pendingNegos = APP_DATA.negos.filter(n => n.status === "pending").length;
+      const activeOrders = APP_DATA.transactions.filter(t => t.status === "Menunggu Bayar" || t.status === "Diproses").length;
+
+      document.getElementById("kpiOmzet").textContent = formatRupiah(totalOmzet);
+      document.getElementById("kpiOngkirInfo").textContent = `Termasuk ongkir ${formatRupiah(totalOngkir)}`;
+      document.getElementById("kpiProfit").textContent = formatRupiah(totalProfit);
+      document.getElementById("kpiMarginInfo").textContent = `Margin bersih ${marginPct}%`;
+      document.getElementById("kpiUnitsSold").textContent = `${totalUnits} Unit`;
+      document.getElementById("kpiOrderCount").textContent = `${validOrders.length} Transaksi sah`;
+      document.getElementById("kpiPendingQueue").textContent = `${pendingNegos} Nego / ${activeOrders} Order`;
+
+      document.getElementById("paymentBreakdownList").innerHTML = `
+        <div class="d-flex justify-content-between mb-1">
+          <span><i class="bi bi-qr-code me-1"></i>QRIS:</span>
+          <strong>${formatRupiah(payMap.QRIS)}</strong>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span><i class="bi bi-bank me-1"></i>Transfer:</span>
+          <strong>${formatRupiah(payMap.TRANSFER)}</strong>
+        </div>
+      `;
+
+      const shipEntries = Object.entries(shipMap);
+      document.getElementById("shippingBreakdownList").innerHTML = shipEntries.length
+        ? shipEntries.map(([k, v]) => `<div class="d-flex justify-content-between mb-1"><span class="text-truncate me-1">${escapeHtml(k)}</span><strong>${v}x</strong></div>`).join("")
+        : `<span class="text-muted">Belum ada pengiriman</span>`;
+
+      document.getElementById("reportRowCount").textContent = `${validOrders.length} data`;
+      const tbody = document.getElementById("adminReportTableBody");
+      if (validOrders.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" class="text-center text-muted py-3">Belum ada transaksi pada periode ini.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = validOrders.map(t => {
+        const profit = (Number(t.unitPrice) - (Number(t.costPrice) || 0)) * Number(t.qty);
+        return `
+          <tr>
+            <td>
+              <div class="fw-bold text-theme">${escapeHtml(t.invoiceNo)}</div>
+              <div class="text-muted" style="font-size:0.65rem;">${formatDateShort(t.createdAt)}</div>
+            </td>
+            <td>
+              <div class="fw-semibold">${escapeHtml(t.productName)} (${t.qty}x)</div>
+              <div class="text-muted" style="font-size:0.67rem;">${escapeHtml(t.buyerName)} • ${escapeHtml(t.paymentMethod)}</div>
+            </td>
+            <td class="text-end">
+              <div class="fw-semibold">${formatRupiah(t.totalAmount)}</div>
+              <div class="text-success fw-bold" style="font-size:0.67rem;">+${formatRupiah(profit)}</div>
+            </td>
+            <td class="text-end">
+              <button type="button" class="btn btn-sm btn-theme-soft py-0 px-2" style="font-size:0.72rem;" onclick="openReceiptPreviewModal('${t.id}')" title="Preview, Print & Share WA Nota">
+                <i class="bi bi-receipt"></i> Nota
+              </button>
+            </td>
+          </tr>`;
+      }).join("");
+    }
+
+    function exportSalesCsv() {
+      const headers = ["Invoice", "Tanggal", "Produk", "Qty", "Harga_Satuan", "Harga_Modal", "Ongkir", "Total_Omzet", "Laba_Bersih", "Jasa_Kirim", "Metode_Bayar", "Pembeli", "Status"];
+      const rows = APP_DATA.transactions.map(t => {
+        const profit = t.status === "Dibatalkan" ? 0 : (Number(t.unitPrice) - (Number(t.costPrice) || 0)) * Number(t.qty);
+        return [
+          t.invoiceNo, t.createdAt, `"${(t.productName || "").replace(/"/g, '""')}"`,
+          t.qty, t.unitPrice, t.costPrice, t.shippingCost, t.totalAmount, profit,
+          `"${t.shippingName}"`, t.paymentMethod, `"${t.buyerName}"`, t.status
+        ].join(",");
+      });
+      const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows].join("\n");
+      const link = document.createElement("a");
+      link.setAttribute("href", encodeURI(csvContent));
+      link.setAttribute("download", `laporan_penjualan_bakoel_hp_${new Date().toISOString().slice(0, 10)}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("Laporan CSV berhasil diunduh.");
+    }
+
+    /* --- ADMIN PRODUK & STOK --- */
+    function updateAdminMemoryMeter() {
+      const stats = getStorageUsageStats();
+      const memText = document.getElementById("adminMemText");
+      const memProg = document.getElementById("adminMemProgress");
+      const memSub = document.getElementById("adminMemSubtext");
+      if (!memText) return;
+
+      memText.textContent = `${stats.usedKb.toLocaleString("id-ID")} KB / ${stats.maxKb.toLocaleString("id-ID")} KB (${stats.pct}%)`;
+      memProg.style.width = `${stats.pct}%`;
+      memProg.className = "progress-bar " + (stats.pct > 85 ? "bg-danger" : stats.pct > 65 ? "bg-warning" : "bg-primary");
+      memSub.textContent = `Kompresi otomatis aktif (±28 KB/foto • estimasi muat ±${stats.estRemainingPhotos} foto unit lagi)`;
+    }
+
+    function renderAdminProducts() {
+      updateAdminMemoryMeter();
+      const q = (document.getElementById("adminProdSearch").value || "").toLowerCase();
+      const list = APP_DATA.products.filter(p =>
+        !q || (p.name || "").toLowerCase().includes(q) || (p.brand || "").toLowerCase().includes(q)
+      );
+
+      const container = document.getElementById("adminProductList");
+      if (list.length === 0) {
+        container.innerHTML = `<div class="app-card p-4 text-center text-muted small">Belum ada produk HP. Klik "+ Tambah HP" untuk mulai mengisi stok.</div>`;
+        return;
+      }
+
+      container.innerHTML = list.map(p => {
+        const estProfit = (Number(p.openPrice) || 0) - (Number(p.costPrice) || 0);
+        const thumbSrc = p.image || createPhoneIllustration(p.brand || "HP", "e0f2fe");
+        return `
+          <div class="app-card p-3">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <div class="d-flex gap-2 overflow-hidden">
+                <img src="${thumbSrc}" alt="${escapeHtml(p.name)}" class="rounded-3 flex-shrink-0 border" style="width:56px; height:56px; object-fit:cover;" onerror="this.onerror=null; this.src=FALLBACK_MASCOT_SVG;" />
+                <div class="overflow-hidden">
+                  <span class="badge bg-theme-soft mb-1">${escapeHtml(p.brand)} • ${escapeHtml(p.variant)}</span>
+                  <div class="fw-bold text-truncate">${escapeHtml(p.name)}</div>
+                  <div class="small text-muted text-truncate">${escapeHtml(p.condition)}</div>
+                </div>
+              </div>
+              <div class="text-end flex-shrink-0">
+                <div class="small text-muted">Stok Unit</div>
+                <div class="btn-group btn-group-sm mt-1">
+                  <button type="button" class="btn btn-outline-secondary py-0 px-2" onclick="adjustProductStock('${p.id}', -1)">-</button>
+                  <span class="btn btn-light py-0 px-2 fw-bold disabled">${p.stock}</span>
+                  <button type="button" class="btn btn-outline-secondary py-0 px-2" onclick="adjustProductStock('${p.id}', 1)">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="row g-1 mt-2 pt-2 border-top small">
+              <div class="col-4">
+                <span class="text-muted d-block" style="font-size:0.68rem;">Harga Modal</span>
+                <span class="fw-semibold">${formatRupiah(p.costPrice)}</span>
+              </div>
+              <div class="col-4">
+                <span class="text-muted d-block" style="font-size:0.68rem;">Harga Open</span>
+                <span class="fw-bold text-theme">${formatRupiah(p.openPrice)}</span>
+              </div>
+              <div class="col-4">
+                <span class="text-muted d-block" style="font-size:0.68rem;">Margin Open</span>
+                <span class="fw-bold text-success">+${formatRupiah(estProfit)}</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end gap-2 mt-2 pt-2 border-top">
+              <button type="button" class="btn btn-sm btn-outline-primary py-0 px-2" onclick="openProductFormModal('${p.id}')">
+                <i class="bi bi-pencil-square me-1"></i>Edit &amp; Foto
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-danger py-0 px-2" onclick="confirmDeleteProduct('${p.id}')">
+                <i class="bi bi-trash me-1"></i>Hapus
+              </button>
+            </div>
+          </div>`;
+      }).join("");
+    }
+
+    function openProductFormModal(productId) {
+      const form = document.getElementById("formProductAdmin");
+      form.reset();
+      document.getElementById("editProdId").value = "";
+      document.getElementById("prodImage").value = "";
+      updateProductPhotoPreview("");
+
+      if (productId) {
+        const p = APP_DATA.products.find(x => x.id === productId);
+        if (p) {
+          document.getElementById("prodFormTitle").textContent = "Edit Unit & Foto HP";
+          document.getElementById("editProdId").value = p.id;
+          document.getElementById("prodName").value = p.name;
+          document.getElementById("prodBrand").value = p.brand || "Lainnya";
+          document.getElementById("prodVariant").value = p.variant || "";
+          document.getElementById("prodCondition").value = p.condition || "";
+          document.getElementById("prodCostPrice").value = p.costPrice || 0;
+          document.getElementById("prodOpenPrice").value = p.openPrice || 0;
+          document.getElementById("prodStock").value = p.stock || 0;
+          document.getElementById("prodImage").value = p.image || "";
+          document.getElementById("prodDesc").value = p.description || "";
+          updateProductPhotoPreview(p.image || "");
+        }
+      } else {
+        document.getElementById("prodFormTitle").textContent = "Tambah Unit HP Baru";
+      }
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalProductForm")).show();
+    }
+
+    function saveAdminProduct(e) {
+      e.preventDefault();
+      const id = document.getElementById("editProdId").value;
+      const brand = document.getElementById("prodBrand").value;
+      const name = document.getElementById("prodName").value.trim();
+      const rawImg = document.getElementById("prodImage").value.trim();
+
+      const payload = {
+        id: id || "PRD-" + Date.now(),
+        name,
+        brand,
+        variant: document.getElementById("prodVariant").value.trim(),
+        condition: document.getElementById("prodCondition").value.trim(),
+        costPrice: Number(document.getElementById("prodCostPrice").value) || 0,
+        openPrice: Number(document.getElementById("prodOpenPrice").value) || 0,
+        stock: Math.max(0, Number(document.getElementById("prodStock").value) || 0),
+        image: rawImg || createPhoneIllustration(brand, "e0f2fe"),
+        description: document.getElementById("prodDesc").value.trim(),
+        updatedAt: new Date().toISOString()
+      };
+
+      const backupProducts = [...APP_DATA.products];
+      if (id) {
+        const idx = APP_DATA.products.findIndex(p => p.id === id);
+        if (idx !== -1) APP_DATA.products[idx] = payload;
+      } else {
+        APP_DATA.products.unshift(payload);
+      }
+
+      const savedOk = saveAppData();
+      if (!savedOk) {
+        APP_DATA.products = backupProducts;
+        return;
+      }
+
+      showToast(id ? "Data & foto unit HP diperbarui." : "Unit HP baru ditambahkan ke katalog.");
+      bootstrap.Modal.getInstance(document.getElementById("modalProductForm")).hide();
+      renderAdminProducts();
+    }
+
+    function adjustProductStock(productId, delta) {
+      const p = APP_DATA.products.find(x => x.id === productId);
+      if (!p) return;
+      p.stock = Math.max(0, (Number(p.stock) || 0) + delta);
+      p.updatedAt = new Date().toISOString();
+      saveAppData();
+      renderAdminProducts();
+    }
+
+    function confirmDeleteProduct(productId) {
+      const p = APP_DATA.products.find(x => x.id === productId);
+      if (!p) return;
+      showConfirmModal(
+        "Hapus Unit HP",
+        `Yakin ingin menghapus "${p.name}" beserta fotonya untuk mengosongkan memori?`,
+        "Hapus Unit",
+        "btn-danger",
+        () => {
+          APP_DATA.products = APP_DATA.products.filter(x => x.id !== productId);
+          saveAppData();
+          renderAdminProducts();
+          showToast("Unit HP & fotonya dihapus (memori dibebaskan).");
+        }
+      );
+    }
+
+    /* --- ADMIN NEGO & PESANAN (DENGAN PREVIEW, PRINT & SHARE WA.ME NOTA) --- */
+    function switchAdminOrderSubTab(sub) {
+      const isNego = sub === "nego";
+      document.getElementById("subTabNegoBtn").classList.toggle("active", isNego);
+      document.getElementById("subTabOrderBtn").classList.toggle("active", !isNego);
+      document.getElementById("adminNegoContainer").classList.toggle("d-none", !isNego);
+      document.getElementById("adminOrderContainer").classList.toggle("d-none", isNego);
+    }
+
+    function renderAdminOrdersAndNegos() {
+      const negoWrap = document.getElementById("adminNegoContainer");
+      if (APP_DATA.negos.length === 0) {
+        negoWrap.innerHTML = `<div class="app-card p-4 text-center text-muted small">Belum ada penawaran nego dari pembeli.</div>`;
+      } else {
+        negoWrap.innerHTML = APP_DATA.negos.map(n => {
+          const prod = APP_DATA.products.find(p => p.id === n.productId);
+          const costInfo = prod ? `Modal: ${formatRupiah(prod.costPrice)}` : "";
+          const waNum = (n.buyerWa || "").replace(/^0/, "62").replace(/[^0-9]/g, "");
+
+          return `
+            <div class="app-card p-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <span class="fw-bold text-theme small">${escapeHtml(n.code)}</span> • <small class="text-muted">${formatDateShort(n.createdAt)}</small>
+                  <div class="fw-bold">${escapeHtml(n.productName)} (${n.qty} unit)</div>
+                </div>
+                <span class="badge ${n.status === "pending" ? "bg-warning text-dark" : n.status === "approved" ? "bg-success" : n.status === "countered" ? "bg-info text-dark" : "bg-secondary"}">
+                  ${escapeHtml(n.status.toUpperCase())}
+                </span>
+              </div>
+              <div class="small mt-1">
+                Open: <strong>${formatRupiah(n.openPrice)}</strong> |
+                Tawar: <strong class="text-primary">${formatRupiah(n.offerPrice)}</strong>
+                ${costInfo ? `<span class="text-muted ms-1">(${costInfo})</span>` : ""}
+              </div>
+              <div class="small text-muted mt-1">Pembeli: ${escapeHtml(n.buyerName)} (${escapeHtml(n.buyerWa)})</div>
+              ${n.note ? `<div class="small fst-italic text-muted">"${escapeHtml(n.note)}"</div>` : ""}
+              <div class="d-flex gap-2 mt-2 pt-2 border-top">
+                <button type="button" class="btn btn-sm btn-theme flex-grow-1" onclick="openAdminNegoReplyModal('${n.id}')">
+                  <i class="bi bi-reply-all me-1"></i>Respon Nego
+                </button>
+                ${waNum ? `<a href="https://wa.me/${waNum}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success"><i class="bi bi-whatsapp"></i></a>` : ""}
+                <button type="button" class="btn btn-sm btn-outline-danger" onclick="confirmDeleteNego('${n.id}')"><i class="bi bi-trash"></i></button>
+              </div>
+            </div>`;
+        }).join("");
+      }
+
+      const orderWrap = document.getElementById("adminOrderContainer");
+      if (APP_DATA.transactions.length === 0) {
+        orderWrap.innerHTML = `<div class="app-card p-4 text-center text-muted small">Belum ada pesanan masuk.</div>`;
+      } else {
+        orderWrap.innerHTML = APP_DATA.transactions.map(t => {
+          const waNum = (t.buyerWa || "").replace(/^0/, "62").replace(/[^0-9]/g, "");
+          const statuses = ["Menunggu Bayar", "Diproses", "Dikirim", "Selesai", "Dibatalkan"];
+          return `
+            <div class="app-card p-3">
+              <div class="d-flex justify-content-between align-items-start mb-1">
+                <div>
+                  <span class="fw-bold text-theme small">${escapeHtml(t.invoiceNo)}</span>
+                  <span class="text-muted ms-1" style="font-size:0.7rem;">${formatDateShort(t.createdAt)}</span>
+                  <div class="fw-bold">${escapeHtml(t.productName)} (${t.qty}x)</div>
+                </div>
+                <span class="fw-bold text-theme">${formatRupiah(t.totalAmount)}</span>
+              </div>
+              <div class="small text-muted">
+                <div><i class="bi bi-person me-1"></i>${escapeHtml(t.buyerName)} (${escapeHtml(t.buyerWa)})</div>
+                <div><i class="bi bi-geo-alt me-1"></i>${escapeHtml(t.buyerAddress)}</div>
+                <div><i class="bi bi-truck me-1"></i>${escapeHtml(t.shippingName)} • <strong>${escapeHtml(t.paymentMethod)}</strong></div>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-2 pt-2 border-top">
+                <select class="form-select form-select-sm flex-grow-1" onchange="updateOrderStatus('${t.id}', this.value)">
+                  ${statuses.map(st => `<option value="${st}" ${t.status === st ? "selected" : ""}>Status: ${st}</option>`).join("")}
+                </select>
+                <button type="button" class="btn btn-sm btn-theme-soft fw-semibold" onclick="openReceiptPreviewModal('${t.id}')" title="Preview, Print 58mm & Share WA Nota">
+                  <i class="bi bi-receipt me-1"></i>Nota / WA
+                </button>
+                ${waNum ? `<a href="https://wa.me/${waNum}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-success" title="Chat WA Pembeli"><i class="bi bi-whatsapp"></i></a>` : ""}
+              </div>
+            </div>`;
+        }).join("");
+      }
+    }
+
+    function openAdminNegoReplyModal(negoId) {
+      const n = APP_DATA.negos.find(x => x.id === negoId);
+      if (!n) return;
+      document.getElementById("replyNegoId").value = n.id;
+      document.getElementById("replyNegoSummary").innerHTML = `
+        <div class="fw-bold">${escapeHtml(n.productName)} (${n.qty} unit)</div>
+        <div>Harga Open: ${formatRupiah(n.openPrice)} • Tawaran Pembeli: <strong>${formatRupiah(n.offerPrice)}</strong></div>
+      `;
+      document.getElementById("replyNegoStatus").value = n.status === "pending" ? "approved" : n.status;
+      document.getElementById("replyCounterPrice").value = n.counterPrice || Math.round((n.openPrice + n.offerPrice) / 2);
+      document.getElementById("replyAdminNote").value = n.adminNote || "";
+      onReplyStatusChange();
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("modalAdminNegoReply")).show();
+    }
+
+    function onReplyStatusChange() {
+      const st = document.getElementById("replyNegoStatus").value;
+      document.getElementById("replyCounterPriceWrap").classList.toggle("d-none", st !== "countered");
+    }
+
+    function submitAdminNegoReply() {
+      const id = document.getElementById("replyNegoId").value;
+      const n = APP_DATA.negos.find(x => x.id === id);
+      if (!n) return;
+      n.status = document.getElementById("replyNegoStatus").value;
+      n.counterPrice = Number(document.getElementById("replyCounterPrice").value) || 0;
+      n.adminNote = document.getElementById("replyAdminNote").value.trim();
+      n.updatedAt = new Date().toISOString();
+
+      saveAppData();
+      bootstrap.Modal.getInstance(document.getElementById("modalAdminNegoReply")).hide();
+      renderAdminOrdersAndNegos();
+      showToast("Respon nego berhasil disimpan.");
+    }
+
+    function confirmDeleteNego(negoId) {
+      showConfirmModal("Hapus Data Nego", "Hapus riwayat penawaran nego ini?", "Hapus", "btn-danger", () => {
+        APP_DATA.negos = APP_DATA.negos.filter(x => x.id !== negoId);
+        saveAppData();
+        renderAdminOrdersAndNegos();
+        showToast("Data nego dihapus.");
+      });
+    }
+
+    function updateOrderStatus(trxId, newStatus) {
+      const t = APP_DATA.transactions.find(x => x.id === trxId);
+      if (!t) return;
+      const oldStatus = t.status;
+      const prod = APP_DATA.products.find(p => p.id === t.productId);
+
+      if (prod) {
+        if (oldStatus !== "Dibatalkan" && newStatus === "Dibatalkan") {
+          prod.stock = (Number(prod.stock) || 0) + Number(t.qty);
+        } else if (oldStatus === "Dibatalkan" && newStatus !== "Dibatalkan") {
+          prod.stock = Math.max(0, (Number(prod.stock) || 0) - Number(t.qty));
+        }
+      }
+
+      t.status = newStatus;
+      t.updatedAt = new Date().toISOString();
+      saveAppData();
+      showToast(`Status ${t.invoiceNo} diubah ke "${newStatus}"`);
+    }
+
+    /* --- PENGATURAN TOKO, GAS URL (LOCK/UNLOCK), BACKUP & RESTORE --- */
+    function populateSettingsForm() {
+      const s = APP_DATA.settings;
+      document.getElementById("setStoreName").value = s.storeName || "";
+      document.getElementById("setStoreTagline").value = s.storeTagline || "";
+      document.getElementById("setStoreAddress").value = s.storeAddress || "";
+      document.getElementById("setStorePhone").value = s.storePhone || "";
+      document.getElementById("setLogoUrl").value = s.logoUrl || DEFAULT_MASCOT_LOGO_PATH;
+      document.getElementById("setQrisImage").value = s.qrisImage || "";
+      document.getElementById("setQrisNmid").value = s.qrisNmid || "";
+
+      document.getElementById("settingsSecurityLogo").src = getActiveLogoSrc();
+      document.getElementById("setSecurityPhrase").value = s.securityPhrase || "BAKOEL HP ASLI • SMARTPHONE PILIHAN HARGA BERSAHABAT";
+
+      const bankList = document.getElementById("settingsBankList");
+      bankList.innerHTML = (s.bankAccounts || []).map(b => `
+        <div class="row g-1 align-items-center bank-row-item">
+          <div class="col-3"><input type="text" class="form-control form-control-sm bank-name" value="${escapeHtml(b.bank)}" placeholder="Bank" /></div>
+          <div class="col-4"><input type="text" class="form-control form-control-sm bank-num" value="${escapeHtml(b.number)}" placeholder="No. Rek" /></div>
+          <div class="col-4"><input type="text" class="form-control form-control-sm bank-holder" value="${escapeHtml(b.holder)}" placeholder="Atas Nama" /></div>
+          <div class="col-1 text-end"><button type="button" class="btn btn-sm text-danger p-0" onclick="this.closest('.bank-row-item').remove()"><i class="bi bi-x-circle"></i></button></div>
+        </div>
+      `).join("");
+
+      const shipList = document.getElementById("settingsShippingList");
+      shipList.innerHTML = (s.shippingMethods || []).map(sh => `
+        <div class="row g-1 align-items-center ship-row-item">
+          <div class="col-6"><input type="text" class="form-control form-control-sm ship-name" value="${escapeHtml(sh.name)}" placeholder="Nama Jasa Kirim" /></div>
+          <div class="col-3"><input type="number" class="form-control form-control-sm ship-cost" value="${Number(sh.cost) || 0}" placeholder="Ongkir" /></div>
+          <div class="col-2"><input type="text" class="form-control form-control-sm ship-eta" value="${escapeHtml(sh.eta || "")}" placeholder="ETA" /></div>
+          <div class="col-1 text-end"><button type="button" class="btn btn-sm text-danger p-0" onclick="this.closest('.ship-row-item').remove()"><i class="bi bi-x-circle"></i></button></div>
+        </div>
+      `).join("");
+
+      const urlInput = document.getElementById("setGasUrlInput");
+      urlInput.value = getApiUrl();
+      isGasUrlUnlocked = false;
+      syncGasLockUi();
+
+      document.getElementById("setNewPin").value = s.adminPin || "123456";
+      document.getElementById("setSecQuestion").value = s.securityQuestion || "";
+      document.getElementById("setSecAnswer").value = s.securityAnswer || "";
+
+      const stats = getStorageUsageStats();
+      document.getElementById("settingsMemUsage").textContent = `${stats.usedKb.toLocaleString("id-ID")} KB / ${stats.maxKb.toLocaleString("id-ID")} KB (${stats.pct}%)`;
+      document.getElementById("settingsMemBar").style.width = `${stats.pct}%`;
+    }
+
+    function addBankRow() {
+      const bankList = document.getElementById("settingsBankList");
+      const div = document.createElement("div");
+      div.className = "row g-1 align-items-center bank-row-item";
+      div.innerHTML = `
+        <div class="col-3"><input type="text" class="form-control form-control-sm bank-name" placeholder="Bank" /></div>
+        <div class="col-4"><input type="text" class="form-control form-control-sm bank-num" placeholder="No. Rek" /></div>
+        <div class="col-4"><input type="text" class="form-control form-control-sm bank-holder" placeholder="Atas Nama" /></div>
+        <div class="col-1 text-end"><button type="button" class="btn btn-sm text-danger p-0" onclick="this.closest('.bank-row-item').remove()"><i class="bi bi-x-circle"></i></button></div>
+      `;
+      bankList.appendChild(div);
+    }
+
+    function addShippingRow() {
+      const shipList = document.getElementById("settingsShippingList");
+      const div = document.createElement("div");
+      div.className = "row g-1 align-items-center ship-row-item";
+      div.innerHTML = `
+        <div class="col-6"><input type="text" class="form-control form-control-sm ship-name" placeholder="Kurir Toko..." /></div>
+        <div class="col-3"><input type="number" class="form-control form-control-sm ship-cost" value="0" placeholder="Ongkir" /></div>
+        <div class="col-2"><input type="text" class="form-control form-control-sm ship-eta" placeholder="1 Jam" /></div>
+        <div class="col-1 text-end"><button type="button" class="btn btn-sm text-danger p-0" onclick="this.closest('.ship-row-item').remove()"><i class="bi bi-x-circle"></i></button></div>
+      `;
+      shipList.appendChild(div);
+    }
+
+    function saveStoreIdentity() {
+      APP_DATA.settings.storeName = document.getElementById("setStoreName").value.trim() || "BAKOEL HP";
+      APP_DATA.settings.storeTagline = document.getElementById("setStoreTagline").value.trim();
+      APP_DATA.settings.storeAddress = document.getElementById("setStoreAddress").value.trim();
+      APP_DATA.settings.storePhone = document.getElementById("setStorePhone").value.trim();
+      APP_DATA.settings.logoUrl = document.getElementById("setLogoUrl").value.trim() || DEFAULT_MASCOT_LOGO_PATH;
+      saveAppData();
+      document.getElementById("settingsSecurityLogo").src = getActiveLogoSrc();
+      showToast("Identitas Header & Logo Toko disimpan.");
+    }
+
+    function savePaymentAndShipping() {
+      APP_DATA.settings.qrisImage = document.getElementById("setQrisImage").value.trim();
+      APP_DATA.settings.qrisNmid = document.getElementById("setQrisNmid").value.trim();
+
+      const banks = [];
+      document.querySelectorAll(".bank-row-item").forEach((row, i) => {
+        const bank = row.querySelector(".bank-name").value.trim();
+        const number = row.querySelector(".bank-num").value.trim();
+        const holder = row.querySelector(".bank-holder").value.trim();
+        if (bank && number) banks.push({ id: "b" + (i + 1), bank, number, holder });
+      });
+      if (banks.length > 0) APP_DATA.settings.bankAccounts = banks;
+
+      const ships = [];
+      document.querySelectorAll(".ship-row-item").forEach((row, i) => {
+        const name = row.querySelector(".ship-name").value.trim();
+        const cost = Number(row.querySelector(".ship-cost").value) || 0;
+        const eta = row.querySelector(".ship-eta").value.trim();
+        if (name) ships.push({ id: "s" + (i + 1), name, cost, eta });
+      });
+      if (ships.length > 0) APP_DATA.settings.shippingMethods = ships;
+
+      saveAppData();
+      showToast("Pengaturan Pembayaran & Jasa Kirim disimpan.");
+    }
+
+    /* --- GAS URL LOCK / UNLOCK --- */
+    function toggleGasUrlLock() {
+      isGasUrlUnlocked = !isGasUrlUnlocked;
+      syncGasLockUi();
+      if (isGasUrlUnlocked) {
+        document.getElementById("setGasUrlInput").focus();
+        showToast("Input URL Spreadsheet dibuka. Silakan edit lalu klik Simpan Perubahan.");
+      }
+    }
+
+    function syncGasLockUi() {
+      const input = document.getElementById("setGasUrlInput");
+      const btnLock = document.getElementById("btnToggleUrlLock");
+      const btnSave = document.getElementById("btnSaveGasUrl");
+
+      input.readOnly = !isGasUrlUnlocked;
+      input.disabled = !isGasUrlUnlocked;
+      btnSave.disabled = !isGasUrlUnlocked;
+
+      if (isGasUrlUnlocked) {
+        btnLock.className = "btn btn-sm btn-warning py-0 px-2";
+        btnLock.innerHTML = `<i class="bi bi-unlock-fill me-1"></i>Terbuka`;
+      } else {
+        btnLock.className = "btn btn-sm btn-outline-warning py-0 px-2";
+        btnLock.innerHTML = `<i class="bi bi-lock-fill me-1"></i>Terkunci`;
+      }
+    }
+
+    function saveGasUrl() {
+      const newUrl = document.getElementById("setGasUrlInput").value.trim();
+      if (!newUrl || !newUrl.startsWith("https://")) {
+        showToast("URL Web App Apps Script harus diawali https://");
+        return;
+      }
+      localStorage.setItem(API_URL_KEY, newUrl);
+      isGasUrlUnlocked = false;
+      syncGasLockUi();
+      showToast("URL Spreadsheet berhasil disimpan & dikunci kembali.");
+      syncData(false);
+    }
+
+    function confirmResetGasUrl() {
+      showConfirmModal(
+        "Reset URL Spreadsheet",
+        "Kembalikan URL Google Apps Script ke nilai default awal?",
+        "Reset URL",
+        "btn-warning",
+        () => {
+          localStorage.removeItem(API_URL_KEY);
+          document.getElementById("setGasUrlInput").value = DEFAULT_API_URL;
+          isGasUrlUnlocked = false;
+          syncGasLockUi();
+          showToast("URL Spreadsheet dikembalikan ke default.");
+        }
+      );
+    }
+
+    function saveAdminSecurity() {
+      const pin = document.getElementById("setNewPin").value.trim();
+      if (!/^\d{6}$/.test(pin)) {
+        showToast("PIN Admin harus terdiri dari 6 digit angka.");
+        return;
+      }
+      APP_DATA.settings.securityPhrase = document.getElementById("setSecurityPhrase").value.trim() || "BAKOEL HP ASLI";
+      APP_DATA.settings.adminPin = pin;
+      APP_DATA.settings.securityQuestion = document.getElementById("setSecQuestion").value.trim();
+      APP_DATA.settings.securityAnswer = document.getElementById("setSecAnswer").value.trim();
+      saveAppData();
+      showToast("Frasa Pengamanan & PIN Penjual diperbarui.");
+    }
+
+    /* --- BACKUP & RESTORE JSON --- */
+    function exportJsonBackup() {
+      const blob = new Blob([JSON.stringify(APP_DATA, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `backup_bakoel_hp_${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("File backup JSON berhasil diunduh.");
+    }
+
+    function handleImportJson(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          if (!parsed || !Array.isArray(parsed.products)) {
+            showToast("Format file JSON tidak valid.");
+            return;
+          }
+          showConfirmModal(
+            "Restore Data JSON",
+            "Data lokal saat ini akan digantikan dengan isi file backup JSON. Lanjutkan?",
+            "Ya, Restore",
+            "btn-success",
+            () => {
+              APP_DATA = {
+                settings: { ...getDefaultAppData().settings, ...(parsed.settings || {}) },
+                products: parsed.products || [],
+                negos: parsed.negos || [],
+                transactions: parsed.transactions || [],
+                lastSync: new Date().toISOString()
+              };
+              saveAppData(false);
+              applyTheme(APP_DATA.settings.theme);
+              populateSettingsForm();
+              showToast("Data berhasil dipulihkan dari file JSON!");
+            }
+          );
+        } catch (err) {
+          showToast("Gagal membaca file JSON.");
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = "";
+    }
+
+    function confirmResetDemoData() {
+      showConfirmModal(
+        "Reset Data Katalog",
+        "Semua produk, nego, transaksi, dan pengaturan akan dikembalikan ke data awal. Lanjutkan?",
+        "Reset Semua",
+        "btn-danger",
+        () => {
+          APP_DATA = getDefaultAppData();
+          saveAppData(false);
+          applyTheme("ocean");
+          populateSettingsForm();
+          showToast("Aplikasi dikembalikan ke data awal.");
+        }
+      );
+    }
+
+    /* =========================================================================
+       11. SINKRONISASI 2 ARAH DENGAN GOOGLE APPS SCRIPT (syncData)
+       ========================================================================= */
+    async function manualSync() {
+      if (!navigator.onLine) {
+        showToast("Perangkat sedang offline. Perubahan tersimpan aman di lokal.");
+        return;
+      }
+      if (!hasCustomGasUrl()) {
+        showToast("URL Spreadsheet belum diatur di Menu Penjual > Pengaturan. Berjalan dalam mode lokal.");
+        return;
+      }
+      await syncData(false);
+    }
+
+    async function syncData(silent = false) {
+      if (!navigator.onLine || !hasCustomGasUrl()) return;
+      const apiUrl = getApiUrl();
+      const syncIcon = document.getElementById("syncIcon");
+      syncIcon.classList.add("spinner-border", "spinner-border-sm");
+      syncIcon.classList.remove("bi", "bi-arrow-repeat");
+
+      try {
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify({
+            action: "sync",
+            payload: APP_DATA
+          })
+        });
+        const result = await response.json();
+        if (result && result.status === "success" && result.data) {
+          if (Array.isArray(result.data.products) && result.data.products.length > 0) {
+            APP_DATA.products = result.data.products;
+          }
+          if (Array.isArray(result.data.negos)) {
+            APP_DATA.negos = result.data.negos;
+          }
+          if (Array.isArray(result.data.transactions)) {
+            APP_DATA.transactions = result.data.transactions;
+          }
+          if (result.data.settings && result.data.settings.storeName) {
+            APP_DATA.settings = { ...APP_DATA.settings, ...result.data.settings };
+          }
+          APP_DATA.lastSync = new Date().toISOString();
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(APP_DATA));
+          updateBadgesAndHeader();
+          renderCustomerCatalog();
+          if (isAdminLoggedIn) {
+            renderAdminReports();
+            renderAdminProducts();
+            renderAdminOrdersAndNegos();
+          }
+          if (!silent) showToast("Sinkronisasi Google Sheets berhasil!");
+        } else if (!silent) {
+          showToast("Server merespon, namun format data belum sesuai.");
+        }
+      } catch (err) {
+        if (!silent) showToast("Gagal terhubung ke server GAS. Data lokal tetap aman.");
+      } finally {
+        syncIcon.className = "bi bi-arrow-repeat";
+      }
+    }
+
+    /* =========================================================================
+       12. PWA INSTALL BANNER (beforeinstallprompt) & SERVICE WORKER
+       ========================================================================= */
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      const banner = document.getElementById("pwaInstallBanner");
+      if (banner && !sessionStorage.getItem("pwa_banner_dismissed")) {
+        banner.classList.remove("d-none");
+      }
+    });
+
+    document.getElementById("btnInstallPwa").addEventListener("click", async () => {
+      if (!deferredInstallPrompt) return;
+      deferredInstallPrompt.prompt();
+      const { outcome } = await deferredInstallPrompt.userChoice;
+      if (outcome === "accepted") {
+        showToast("Aplikasi Bakoel HP sedang dipasang ke layar utama!");
+      }
+      deferredInstallPrompt = null;
+      document.getElementById("pwaInstallBanner").classList.add("d-none");
+    });
+
+    function dismissPwaBanner() {
+      sessionStorage.setItem("pwa_banner_dismissed", "1");
+      document.getElementById("pwaInstallBanner").classList.add("d-none");
+    }
+
+    window.addEventListener("appinstalled", () => {
+      document.getElementById("pwaInstallBanner").classList.add("d-none");
+      deferredInstallPrompt = null;
+      showToast("Aplikasi Bakoel HP berhasil terinstal!");
+    });
+
+    function updateNetworkIndicator() {
+      const el = document.getElementById("networkStatusText");
+      if (navigator.onLine) {
+        el.textContent = "Online";
+        if (hasCustomGasUrl()) syncData(true);
+      } else {
+        el.textContent = "Offline";
+      }
+    }
+
+    window.addEventListener("online", updateNetworkIndicator);
+    window.addEventListener("offline", updateNetworkIndicator);
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").catch(() => {});
+      });
+    }
+
+    /* =========================================================================
+       13. INISIALISASI AWAL (LANGSUNG MASUK MENU TOKO PEMBELI)
+       ========================================================================= */
+    document.addEventListener("DOMContentLoaded", () => {
+      applyTheme(APP_DATA.settings.theme || "ocean");
+      updateBadgesAndHeader();
+      setupSecretAdminTriggers();
+      updateNetworkIndicator();
+      switchCustomerTab("secCustStore");
+    });
+  </script>
+</body>
+</html>
